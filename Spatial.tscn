@@ -9,15 +9,51 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65869, 421.337, 0 )
 
 [node name="Z conveyor" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -223.988, 12.0088, -52.2301 )
+width_conveyor_MM = 500.0
 height_conveyor_MM = 2220.0
+number_of_leg = 8
+engine = "On the left and right"
+board = "On the left and right"
+height_board_MM = 100.0
+length_top_conveyor_MM = 1500.0
+Top_availability_of_the_knife = "At the beginning of the conveyor belt"
+tilt_angle = 45.0
+length_middle_conveyor_MM = 1370.1
+Middle_availability_of_the_knife = "At the beginning and end of the conveyor"
+length_lower_conveyor_MM = 500.0
+Lower_availability_of_the_knife = "At the end of the conveyor"
 
 [node name="Z conveyor2" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2059.65, 0, 1739.44 )
+width_conveyor_MM = 500.0
 height_conveyor_MM = 1220.0
+number_of_leg = 8
+engine = "On the left and right"
+board = "On the left and right"
+height_board_MM = 100.0
+length_top_conveyor_MM = 1500.0
+Top_availability_of_the_knife = "At the beginning of the conveyor belt"
+tilt_angle = 45.0
+length_middle_conveyor_MM = 1370.1
+Middle_availability_of_the_knife = "At the beginning and end of the conveyor"
+length_lower_conveyor_MM = 500.0
+Lower_availability_of_the_knife = "At the end of the conveyor"
 
 [node name="Z conveyor3" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -228.985, 0, 3713.84 )
+width_conveyor_MM = 500.0
 height_conveyor_MM = 250.0
+number_of_leg = 8
+engine = "On the left and right"
+board = "On the left and right"
+height_board_MM = 100.0
+length_top_conveyor_MM = 1500.0
+Top_availability_of_the_knife = "At the beginning of the conveyor belt"
+tilt_angle = 45.0
+length_middle_conveyor_MM = 1370.1
+Middle_availability_of_the_knife = "At the beginning and end of the conveyor"
+length_lower_conveyor_MM = 500.0
+Lower_availability_of_the_knife = "At the end of the conveyor"
 
 [node name="a12_1450" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -707.552, 117.556, 4565.52 )
@@ -32,7 +68,6 @@ platform_shape = "Squared"
 
 [node name="pedestal2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 7.89169, 0, 4557.64 )
-height = 350.0
 center_size = 300
 platform_size = 500
 platform_shape = "Squared"
@@ -68,11 +103,14 @@ platform_shape = "Squared"
 [node name="a12_1451" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2232.01, 817.164 )
 emulation_state = false
+robot_dir = "res://robots/a12_1450/rcs_data"
 
 [node name="a12_1452" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1689.71, 3117.14, -954.704 )
 emulation_state = false
+robot_dir = "res://robots/a12_1450/rcs_data"
 
 [node name="a12_1453" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2295.31, 1216.24, 2810.85 )
 emulation_state = false
+robot_dir = "res://robots/a12_1450/rcs_data"
