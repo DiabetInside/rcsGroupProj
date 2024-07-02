@@ -1,7 +1,7 @@
 tool
 extends Spatial
 
-export(float, 100, 2000) var height = 350  setget set_height
+export(float, 100, 5000) var height = 350  setget set_height
 export(float, 100, 2000) var center_size = 300  setget set_center_size
 export(float, 100, 2000) var platform_size = 500  setget set_platform_size
 export(String, "Rounded", "Squared") var platform_shape = "Squared"  setget set_platform_shape
