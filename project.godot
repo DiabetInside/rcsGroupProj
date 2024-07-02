@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[Rcs]
+
+screenshots_folder="res://screenshots"
+ProcessManager/launch_HMI_at_startup=false
+ProcessManager/enable_debug_console=false
+ProcessManager/divide_into_subprojects=true
+ProcessManager/default_subproject=""
+ProcessManager/disabled_rcs_processes=""
+ProcessManager/hidden_rcs_projects=""
+ProcessManager/edit_hmi_config=1
+
+[application]
+
+config/name="groupproj"
+config/icon="res://icon.png"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
+
+[video_recording]
+
+save_folder="res://video_records"
+target_fps=40
+quality_preset=1
+width=1920
+height=1080
+disable_gizmo=false

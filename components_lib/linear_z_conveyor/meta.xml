@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_meta>
+<name>linear_z_conveyor</name>
+<developer>eidos</developer>
+<version>1</version>
+<description>Linear z-conveyor with editable parameters: height, length of each part, number of supports, etc.</description>
+</component_meta>

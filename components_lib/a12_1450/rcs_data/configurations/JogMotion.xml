@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JogMotion>
+	<!-- <continuous_movement> -->
+		<min_linear_speed>150</min_linear_speed>
+		<is_speed_in_procent>true</is_speed_in_procent>
+		<min_angle_speed>99</min_angle_speed>
+		<min_line_angle_speed>15</min_line_angle_speed>
+		<joint_deustated_speed>5</joint_deustated_speed>
+		<lin_walk_size>100</lin_walk_size>
+		<lin_ang_walk_size>50</lin_ang_walk_size>
+		<ang_walk_size>50</ang_walk_size>
+		<lin_acceleration>500</lin_acceleration>
+		<joint_acceleration>50</joint_acceleration>
+		<smooth_radius>50</smooth_radius>
+	<!-- </continuous_movement> -->
+	<MoveToPoint>
+		<MoveToPointJointAccel>99</MoveToPointJointAccel>
+		<MoveToPointJointSpeed>99</MoveToPointJointSpeed>
+		<MoveToPointPointAccel>250</MoveToPointPointAccel>
+		<MoveToPointPointSpeed>250</MoveToPointPointSpeed>
+	</MoveToPoint>
+</JogMotion>

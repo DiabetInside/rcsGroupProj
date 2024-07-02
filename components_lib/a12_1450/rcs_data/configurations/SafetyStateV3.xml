@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SafetyStateV3>
+	<safety_multiplyer>30</safety_multiplyer>
+	<ask_period>100</ask_period>
+	<device_address>127.0.0.1</device_address>
+	<device_port>17003</device_port>
+	<bind_address>0.0.0.0</bind_address>
+	<bind_port>0</bind_port>
+	<timings>
+		<enable_drives_pause>400</enable_drives_pause>
+		<started_pausing_program>2000</started_pausing_program>
+		<cat_2_error_response_timeout>10000</cat_2_error_response_timeout>
+		<cat_1_error_response_timeout>10000</cat_1_error_response_timeout>
+		<cat_1_wait_to_brake>500</cat_1_wait_to_brake>
+		<cat_2_pausing_timeout>10000</cat_2_pausing_timeout>
+		<cat_1_pausing_timeout>10000</cat_1_pausing_timeout>
+		<reply_timeout>1000</reply_timeout>
+	</timings>
+	<safe_speed_settings>
+		<SafeDecartSpeed>200</SafeDecartSpeed>
+		<SafeSpeedPerJoint>
+			<SafeSpeedPerJointPart id="0">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="1">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="2">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="3">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="4">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="5">60</SafeSpeedPerJointPart>
+		</SafeSpeedPerJoint>
+	</safe_speed_settings>
+</SafetyStateV3>

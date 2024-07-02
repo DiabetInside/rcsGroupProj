@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DhChain>
+	<joints>
+		<joint id="0">
+			<type>revolute</type>
+			<d_mm>333</d_mm>
+			<theta_deg>0</theta_deg>
+			<r_mm>185.0</r_mm>
+			<alpha_deg>-90</alpha_deg>
+		</joint>
+		<joint id="1">
+			<type>revolute</type>
+			<d_mm>0</d_mm>
+			<theta_deg>-90</theta_deg>
+			<r_mm>534</r_mm>
+			<alpha_deg>-180</alpha_deg>
+		</joint>
+		<joint id="2">
+			<type>revolute</type>
+			<d_mm>0</d_mm>
+			<theta_deg>0</theta_deg>
+			<r_mm>0</r_mm>
+			<alpha_deg>90</alpha_deg>
+		</joint>
+		<joint id="3">
+			<type>revolute</type>
+			<d_mm>594</d_mm>
+			<theta_deg>0</theta_deg>
+			<r_mm>0</r_mm>
+			<alpha_deg>-90</alpha_deg>
+		</joint>
+		<joint id="4">
+			<type>revolute</type>
+			<d_mm>0</d_mm>
+			<theta_deg>-180</theta_deg>
+			<r_mm>0</r_mm>
+			<alpha_deg>-90</alpha_deg>
+		</joint>
+		<joint id="5">
+			<type>revolute</type>
+			<d_mm>160</d_mm>
+			<theta_deg>180</theta_deg>
+			<r_mm>0</r_mm>
+			<alpha_deg>0</alpha_deg>
+		</joint>
+	</joints>
+</DhChain>

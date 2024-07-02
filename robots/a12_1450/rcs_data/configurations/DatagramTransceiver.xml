@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatagramTransceiver>
+	<LocalConnectionData>
+		<Ip>127.0.0.1</Ip>
+		<Port>30000</Port>
+		<Tag>master_machine</Tag>
+	</LocalConnectionData>
+	<CommunicationAgents>
+		<CommunicationAgent id="0">
+			<Ip>127.0.0.1</Ip>
+			<Port>30001</Port>
+			<Tag>slave_machine</Tag>
+		</CommunicationAgent>
+	</CommunicationAgents>
+	<Enabled>false</Enabled>
+	<DefaultAnswerWaitMs>30</DefaultAnswerWaitMs>
+	<DefaultSendWaitMs>100</DefaultSendWaitMs>
+	<CmdResendMaxAttempts>3</CmdResendMaxAttempts>
+</DatagramTransceiver>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutorunController>
+	<Enabled>false</Enabled>
+	<ContinueOnDisconnect>true</ContinueOnDisconnect>
+	<ErrorResponse>ResetInError</ErrorResponse>
+	<PauseResponse>StartPaused</PauseResponse>
+	<UseMainProgram>false</UseMainProgram>
+	<MainProgram></MainProgram>
+	<AdditionalPrograms/>
+</AutorunController>

@@ -1,0 +1,136 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://components_lib/pallet/scripts/pallet.gd" type="Script" id=1]
+[ext_resource path="res://components_lib/pallet/meshes/cube.tres" type="CubeMesh" id=3]
+[ext_resource path="res://components_lib/pallet/meshes/board.tres" type="CubeMesh" id=4]
+[ext_resource path="res://components_lib/pallet/materials/pallets.tres" type="Material" id=5]
+
+[sub_resource type="CubeMesh" id=1]
+material = ExtResource( 5 )
+size = Vector3( 100, 1200, 50 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 145, 100, 250 )
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 145, 100, 250 )
+
+[sub_resource type="CubeMesh" id=4]
+size = Vector3( 145, 145, 250 )
+
+[node name="pallet" type="Spatial"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1.50104, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="board_down" type="Spatial" parent="."]
+
+[node name="board_1" type="MeshInstance" parent="board_down"]
+transform = Transform( 1, 0, 0, 0, -4.3711e-08, 1, 0, -1, -4.3711e-08, 50.5914, 25.5871, 597.968 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="board_2" type="MeshInstance" parent="board_down"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 500, 25, 600 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="board_3" type="MeshInstance" parent="board_down"]
+transform = Transform( 1, 0, 0, 0, -4.3711e-08, 1, 0, -1, -4.3711e-08, 950, 25, 600 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="cubes" type="Spatial" parent="."]
+
+[node name="Cube_1_1" type="MeshInstance" parent="cubes"]
+transform = Transform( -1.62921e-07, -1, -1.62921e-07, 5.30863e-14, 1.62921e-07, -1, 1, -1.62921e-07, 2.65431e-14, 50, 125, 72 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 5 )
+
+[node name="Cube_1_2" type="MeshInstance" parent="cubes"]
+transform = Transform( -1.62921e-07, -1, -1.62921e-07, 5.30863e-14, 1.62921e-07, -1, 1, -1.62921e-07, 2.65431e-14, 50, 125, 600 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 5 )
+
+[node name="Cube_1_3" type="MeshInstance" parent="cubes"]
+transform = Transform( -1.62921e-07, -1, -1.62921e-07, 5.30863e-14, 1.62921e-07, -1, 1, -1.62921e-07, 2.65431e-14, 950, 125, 1127.5 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 5 )
+
+[node name="Cube_2_1" type="MeshInstance" parent="cubes"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 500, 125, 72 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 5 )
+
+[node name="Cube_2_2" type="MeshInstance" parent="cubes"]
+transform = Transform( 1, -2.84217e-14, -2.79494e-15, -8.47434e-16, -1.62921e-07, 1, -2.84217e-14, -1, -1.62921e-07, 500, 125, 600 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="Cube_2_3" type="MeshInstance" parent="cubes"]
+transform = Transform( 1, -1.42109e-14, -9.28931e-16, 9.28929e-16, -1.62921e-07, 1, -1.42109e-14, -1, -1.62921e-07, 500, 125, 1127.5 )
+mesh = ExtResource( 3 )
+material/0 = ExtResource( 5 )
+
+[node name="Cube_3_1" type="MeshInstance" parent="cubes"]
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 950, 125, 72 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 5 )
+
+[node name="Cube_3_2" type="MeshInstance" parent="cubes"]
+transform = Transform( -1.19254e-08, -1, -3.02618e-08, -5.01295e-08, -3.02618e-08, 1, -1, 1.19254e-08, -5.01295e-08, 950, 125, 600 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 5 )
+
+[node name="Cube_3_3" type="MeshInstance" parent="cubes"]
+transform = Transform( -1.19254e-08, -1, -5.43117e-15, -1.62921e-07, -9.9476e-14, 1, -1, 1.19254e-08, -1.62921e-07, 50, 125, 1127.5 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 5 )
+
+[node name="boards" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 250, 0 )
+
+[node name="board_1" type="MeshInstance" parent="boards"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 72, -24, 600 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="board_1_1" type="MeshInstance" parent="boards"]
+transform = Transform( 1, 0, 0, 0, -4.3711e-08, 1, 0, -1, -4.3711e-08, 290.136, -24, 600 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="board_2" type="MeshInstance" parent="boards"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 500, -24, 600 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="board_2_2" type="MeshInstance" parent="boards"]
+transform = Transform( 1, 0, 0, 0, -4.3711e-08, 1, 0, -1, -4.3711e-08, 711.111, -24, 600 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="board_3" type="MeshInstance" parent="boards"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 927.5, -24, 600 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="board2" type="Spatial" parent="."]
+transform = Transform( 0.833333, 0, 0, 0, 1, 0, 0, 0, 1, 0, 150, 0 )
+
+[node name="board6" type="MeshInstance" parent="board2"]
+transform = Transform( -1.62921e-07, 1, -1.62921e-07, 0, -1.62921e-07, -1, -1, -1.62921e-07, 3.03002e-14, 600, 27, 72 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="board7" type="MeshInstance" parent="board2"]
+transform = Transform( -1.62921e-07, -1, -1.87846e-15, -1.62921e-07, 2.84217e-14, -1, 1, -1.62921e-07, -1.62921e-07, 600, 27, 600 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="board8" type="MeshInstance" parent="board2"]
+transform = Transform( -1.62921e-07, -1, -1.87846e-15, -1.62921e-07, 2.84217e-14, -1, 1, -1.62921e-07, -1.62921e-07, 600, 27, 1127.5 )
+mesh = ExtResource( 4 )
+material/0 = ExtResource( 5 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 0.987871, 0, 0.155279, 0, 1, 0, -0.155279, 0, 0.987871, 144, 0, 601.905 )

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RobotSelector>
+	<source_uuid>ArmRobot:10f4800a-fb47-4849-82b2-b6ed4d34f306</source_uuid>
+	<safety_type>SoftwareSafetyState</safety_type>
+	<robot_tag>SixAxisArm</robot_tag>
+	<use_drives_controller>true</use_drives_controller>
+	<check_serial_number>false</check_serial_number>
+</RobotSelector>

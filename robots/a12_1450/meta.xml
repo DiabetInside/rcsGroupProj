@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_meta>
+<name>a12_1450</name>
+<uuid>b21ce936-c206-11ec-9d64-0242ac120002</uuid>
+<developer>eidos</developer>
+<version>1</version>
+<description>Default scene for Eidos A12-1450 without signals and safety configuration</description>
+</component_meta>

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://components_lib/linear_z_conveyor/meshes/transport.tres" type="ArrayMesh" id=1]
+
+[node name="transport" type="MeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1050, 0 )
+
+[node name="transport" type="MeshInstance" parent="."]
+transform = Transform( 0.3, 0, 0, 0, 0.05, 0, 0, 0, 0.025, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
