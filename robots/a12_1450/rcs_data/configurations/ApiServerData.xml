@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ApiServerData>
 	<ip_address>0.0.0.0</ip_address>
-	<port>8003</port>
-	<change_config_accept_time>
-		10
-		<!-- seconds -->
-	</change_config_accept_time>
+	<port>8001</port>
+	<AllowSharedUse>true</AllowSharedUse>
+	<EmitErrorOnDisconnect>true</EmitErrorOnDisconnect>
+	<UseBackupAddress>true</UseBackupAddress>
 </ApiServerData>

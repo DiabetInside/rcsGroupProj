@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "gripper_library",
+"language": "GDScript",
+"path": "res://components_lib/grab/scripts/grab.gd"
+} ]
 _global_script_class_icons={
-
+"gripper_library": ""
 }
 
 [Rcs]
@@ -27,6 +32,7 @@ ProcessManager/edit_hmi_config=1
 [application]
 
 config/name="groupproj"
+run/main_scene="res://Spatial.tscn"
 config/icon="res://icon.png"
 
 [rendering]

@@ -16,51 +16,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65869, 421.337, 0 )
 
 [node name="Z conveyor" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 750 )
-width_conveyor_MM = 500.0
 height_conveyor_MM = 2220.0
-number_of_leg = 8
-engine = "On the left and right"
-board = "On the left and right"
-height_board_MM = 100.0
-length_top_conveyor_MM = 1500.0
-Top_availability_of_the_knife = "At the beginning of the conveyor belt"
-tilt_angle = 45.0
-length_middle_conveyor_MM = 1370.1
-Middle_availability_of_the_knife = "At the beginning and end of the conveyor"
-length_lower_conveyor_MM = 500.0
-Lower_availability_of_the_knife = "At the end of the conveyor"
 
 [node name="Z conveyor2" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2050, 0, 2250 )
-width_conveyor_MM = 500.0
 height_conveyor_MM = 1220.0
-number_of_leg = 8
-engine = "On the left and right"
-board = "On the left and right"
-height_board_MM = 100.0
-length_top_conveyor_MM = 1500.0
-Top_availability_of_the_knife = "At the beginning of the conveyor belt"
-tilt_angle = 45.0
 length_middle_conveyor_MM = 1370.0
-Middle_availability_of_the_knife = "At the beginning and end of the conveyor"
-length_lower_conveyor_MM = 500.0
-Lower_availability_of_the_knife = "At the end of the conveyor"
 
 [node name="Z conveyor3" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 3750 )
-width_conveyor_MM = 500.0
 height_conveyor_MM = 250.0
-number_of_leg = 8
-engine = "On the left and right"
-board = "On the left and right"
-height_board_MM = 100.0
-length_top_conveyor_MM = 1500.0
-Top_availability_of_the_knife = "At the beginning of the conveyor belt"
-tilt_angle = 45.0
 length_middle_conveyor_MM = 1370.0
-Middle_availability_of_the_knife = "At the beginning and end of the conveyor"
-length_lower_conveyor_MM = 500.0
-Lower_availability_of_the_knife = "At the end of the conveyor"
 
 [node name="pedestal" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1.3, 0, 0, 0, 1, 0, 0, 0, 1.3, -700, 0, 4500 )
@@ -86,24 +52,33 @@ transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -1500, 0, 0 )
 height = 3250.0
 
 [node name="a12_1450" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -700, 100, 4500 )
-emulation_state = false
+transform = Transform( 0.998593, 0.0286544, -0.0446124, 0.0446197, 0.000384329, 0.999004, 0.028643, -0.999589, -0.000894761, -737.518, 100, 4500 )
 robot_dir = "res://robots/a12_1450/rcs_data"
+in_scene_id = 1
+api_server_port = 8001
+safety_server_port = 10001
+drives_controller_port = 9001
 
 [node name="a12_1451" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2200, 1500 )
-emulation_state = false
+transform = Transform( -0.0356671, 0.999364, 4.36836e-08, 0, -4.37114e-08, 1, 0.999364, 0.0356671, 1.55906e-09, -1.43051e-06, 2200, 1500 )
 robot_dir = "res://robots/a12_1450/rcs_data"
+in_scene_id = 2
+api_server_port = 8002
+safety_server_port = 10002
+drives_controller_port = 9002
 
 [node name="a12_1452" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1500, 3250, 0 )
-emulation_state = false
+transform = Transform( 0.0321608, 0.999483, 4.36888e-08, 0, -4.37114e-08, 1, 0.999483, -0.0321608, -1.40579e-09, -1500, 3250, 0 )
 robot_dir = "res://robots/a12_1450/rcs_data"
+safety_server_port = 10003
+drives_controller_port = 9003
 
 [node name="a12_1453" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2250, 1200, 3000 )
-emulation_state = false
+transform = Transform( 0.0922315, 0.995738, 4.35251e-08, 0, -4.37114e-08, 1, 0.995738, -0.0922315, -4.03157e-09, -2250, 1200, 3000 )
 robot_dir = "res://robots/a12_1450/rcs_data"
+api_server_port = 8004
+safety_server_port = 10004
+drives_controller_port = 9004
 
 [node name="sticky1" type="RcsStickyArea" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 450, 4500 )
