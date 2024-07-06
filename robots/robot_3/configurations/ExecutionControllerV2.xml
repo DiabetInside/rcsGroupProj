@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExecutionControllerV2>
+	<maximum_allowed_angle>
+		30
+		<!-- degree -->
+	</maximum_allowed_angle>
+	<maximum_allowed_path_len>
+		200
+		<!-- mm -->
+	</maximum_allowed_path_len>
+</ExecutionControllerV2>

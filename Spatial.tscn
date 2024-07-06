@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://components_lib/linear_z_conveyor/linear_Z_conveyor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components_lib/basic_pedestal/pedestal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://components_lib/a12_1450/a12_1450.tscn" type="PackedScene" id=3]
 [ext_resource path="res://components_lib/basic_pedestal/materials/green1.tres" type="Material" id=4]
+[ext_resource path="res://testPart.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 500, 50, 500 )
@@ -16,15 +17,23 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65869, 421.337, 0 )
 
 [node name="Z conveyor" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 750 )
+DriveRunning = true
+grab_on_incoming = true
+delegate_part_on_release = true
 height_conveyor_MM = 2220.0
 
 [node name="Z conveyor2" parent="." instance=ExtResource( 1 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2050, 0, 2250 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2052.33, 0, 2257.16 )
+DriveRunning = true
+grab_on_incoming = true
 height_conveyor_MM = 1220.0
 length_middle_conveyor_MM = 1370.0
 
 [node name="Z conveyor3" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 3750 )
+SpeedMmS = 200.0
+DriveRunning = true
+grab_on_incoming = true
 height_conveyor_MM = 250.0
 length_middle_conveyor_MM = 1370.0
 
@@ -53,32 +62,31 @@ height = 3250.0
 
 [node name="a12_1450" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.998593, 0.0286544, -0.0446124, 0.0446197, 0.000384329, 0.999004, 0.028643, -0.999589, -0.000894761, -737.518, 100, 4500 )
-robot_dir = "res://robots/a12_1450/rcs_data"
-in_scene_id = 1
+robot_dir = "res://robots/robot_1"
 api_server_port = 8001
 safety_server_port = 10001
 drives_controller_port = 9001
 
 [node name="a12_1451" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.0356671, 0.999364, 4.36836e-08, 0, -4.37114e-08, 1, 0.999364, 0.0356671, 1.55906e-09, -1.43051e-06, 2200, 1500 )
-robot_dir = "res://robots/a12_1450/rcs_data"
-in_scene_id = 2
+transform = Transform( -0.0356671, 0.999364, 4.36836e-08, 0, -4.37114e-08, 1, 0.999364, 0.0356671, 1.55906e-09, -6.00867, 2194.94, 1504.26 )
+emulation_state = false
+robot_dir = "res://robots/robot_2"
+api_server_port = 8001
+safety_server_port = 10001
+drives_controller_port = 9001
+
+[node name="a12_1452" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0321608, 0.999483, 4.36888e-08, 0, -4.37114e-08, 1, 0.999483, -0.0321608, -1.40579e-09, -1500, 3250, 0 )
+robot_dir = "res://robots/robot_3"
 api_server_port = 8002
 safety_server_port = 10002
 drives_controller_port = 9002
 
-[node name="a12_1452" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.0321608, 0.999483, 4.36888e-08, 0, -4.37114e-08, 1, 0.999483, -0.0321608, -1.40579e-09, -1500, 3250, 0 )
-robot_dir = "res://robots/a12_1450/rcs_data"
-safety_server_port = 10003
-drives_controller_port = 9003
-
 [node name="a12_1453" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.0922315, 0.995738, 4.35251e-08, 0, -4.37114e-08, 1, 0.995738, -0.0922315, -4.03157e-09, -2250, 1200, 3000 )
-robot_dir = "res://robots/a12_1450/rcs_data"
-api_server_port = 8004
-safety_server_port = 10004
-drives_controller_port = 9004
+robot_dir = "res://robots/robot_4"
+safety_server_port = 10003
+drives_controller_port = 9003
 
 [node name="sticky1" type="RcsStickyArea" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 450, 4500 )
@@ -245,3 +253,90 @@ shape = SubResource( 2 )
 [node name="CollisionShape18" type="CollisionShape" parent="sticky2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 25, 150 )
 shape = SubResource( 2 )
+
+[node name="RcsGridPartGenerator" type="RcsGridPartGenerator" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 450, 4350 )
+mark_manipulatable = true
+part_scene_path = "res://testPart.tscn"
+uuid = "a7f67e01-0291-4004-b55f-fe1112f62516"
+row_step = Vector3( 150, 0, 0 )
+col_step = Vector3( 0, 0, 150 )
+layer_step = Vector3( 0, 50, 0 )
+rows = 3
+cols = 3
+layers = 2
+
+[node name="testPart_1_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+
+[node name="testPart_2_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 150 )
+
+[node name="testPart_3_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 300 )
+
+[node name="testPart_4_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 0 )
+
+[node name="testPart_5_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 150 )
+
+[node name="testPart_6_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 300 )
+
+[node name="testPart_7_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 0 )
+
+[node name="testPart_8_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 150 )
+
+[node name="testPart_9_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 300 )
+
+[node name="testPart_10_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
+
+[node name="testPart_11_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 150 )
+
+[node name="testPart_12_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 300 )
+
+[node name="testPart_13_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 50, 0 )
+
+[node name="testPart_14_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 50, 150 )
+
+[node name="testPart_15_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 50, 300 )
+
+[node name="testPart_16_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 50, 0 )
+
+[node name="testPart_17_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 50, 150 )
+
+[node name="testPart_18_a7f67e01-0291-4004-b55f-fe1112f62516" parent="RcsGridPartGenerator" instance=ExtResource( 5 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 50, 300 )
+
+[node name="testPart" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.166669, -0.816659, 0.552532, -0.24063, 0.509739, 0.825993, -1.19525, -0.338278, -0.139443, -2284.4, 1359.13, 3776.24 )
+slide_on_move = false

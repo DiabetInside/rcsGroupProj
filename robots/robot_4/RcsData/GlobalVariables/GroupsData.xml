@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VariableGroups>
+
+	<Group>
+		<Name>dialog</Name>
+		<Id>6</Id>
+		<IsSystem>true</IsSystem>
+		<Vars>
+			<Id>28</Id>
+			<Id>29</Id>
+			<Id>30</Id>
+			<Id>31</Id>
+			<Id>35</Id>
+			<Id>36</Id>
+			<Id>37</Id>
+			<Id>38</Id>
+			<Id>39</Id>
+		</Vars>
+	</Group>
+</VariableGroups>

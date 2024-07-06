@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArmDeformation>
+	<MaxDeformAngRad>0.5</MaxDeformAngRad>
+	<JointsDeformation>
+		<JointDeformation id="0">
+			<T1_Nm>0.0</T1_Nm>
+			<T2_Nm>0.0</T2_Nm>
+			<Th1_rad>0.0</Th1_rad>
+			<Th2_rad>0.0</Th2_rad>
+			<K1_Nm_rad>0.0</K1_Nm_rad>
+			<K2_Nm_rad>0.0</K2_Nm_rad>
+			<K3_Nm_rad>876625.4265501596</K3_Nm_rad>
+			<Friction_Nm>0.0</Friction_Nm>
+			<DirectionOfRotation>true</DirectionOfRotation>
+			<IsComputeDeformation>true</IsComputeDeformation>
+		</JointDeformation>
+		<JointDeformation id="1">
+			<T1_Nm>0.0</T1_Nm>
+			<T2_Nm>0</T2_Nm>
+			<Th1_rad>0.0</Th1_rad>
+			<Th2_rad>0.00</Th2_rad>
+			<K1_Nm_rad>0.0</K1_Nm_rad>
+			<K2_Nm_rad>0</K2_Nm_rad>
+			<K3_Nm_rad>371276.6512447735</K3_Nm_rad>
+			<Friction_Nm>0.0</Friction_Nm>
+			<DirectionOfRotation>true</DirectionOfRotation>
+			<IsComputeDeformation>true</IsComputeDeformation>
+		</JointDeformation>
+		<JointDeformation id="2">
+			<T1_Nm>0.0</T1_Nm>
+			<T2_Nm>0.0</T2_Nm>
+			<Th1_rad>0.0</Th1_rad>
+			<Th2_rad>0.0</Th2_rad>
+			<K1_Nm_rad>0.0</K1_Nm_rad>
+			<K2_Nm_rad>0.0</K2_Nm_rad>
+			<K3_Nm_rad>168449.59176846204</K3_Nm_rad>
+			<Friction_Nm>0.0</Friction_Nm>
+			<DirectionOfRotation>false</DirectionOfRotation>
+			<IsComputeDeformation>true</IsComputeDeformation>
+		</JointDeformation>
+		<JointDeformation id="3">
+			<T1_Nm>14</T1_Nm>
+			<T2_Nm>48</T2_Nm>
+			<Th1_rad>0.00044</Th1_rad>
+			<Th2_rad>0.00111</Th2_rad>
+			<K1_Nm_rad>31000.0</K1_Nm_rad>
+			<K2_Nm_rad>50000.0</K2_Nm_rad>
+			<K3_Nm_rad>57000.0</K3_Nm_rad>
+			<Friction_Nm>0.0</Friction_Nm>
+			<DirectionOfRotation>true</DirectionOfRotation>
+			<IsComputeDeformation>true</IsComputeDeformation>
+		</JointDeformation>
+		<JointDeformation id="4">
+			<T1_Nm>7.0</T1_Nm>
+			<T2_Nm>25.0</T2_Nm>
+			<Th1_rad>0.00044</Th1_rad>
+			<Th2_rad>0.00113</Th2_rad>
+			<K1_Nm_rad>16000</K1_Nm_rad>
+			<K2_Nm_rad>25000</K2_Nm_rad>
+			<K3_Nm_rad>29000</K3_Nm_rad>
+			<Friction_Nm>0.0</Friction_Nm>
+			<DirectionOfRotation>false</DirectionOfRotation>
+			<IsComputeDeformation>true</IsComputeDeformation>
+		</JointDeformation>
+		<JointDeformation id="5">
+			<T1_Nm>7.0</T1_Nm>
+			<T2_Nm>25.0</T2_Nm>
+			<Th1_rad>0.00044</Th1_rad>
+			<Th2_rad>0.00113</Th2_rad>
+			<K1_Nm_rad>16000</K1_Nm_rad>
+			<K2_Nm_rad>25000</K2_Nm_rad>
+			<K3_Nm_rad>29000</K3_Nm_rad>
+			<Friction_Nm>0.0</Friction_Nm>
+			<DirectionOfRotation>true</DirectionOfRotation>
+			<IsComputeDeformation>true</IsComputeDeformation>
+		</JointDeformation>
+	</JointsDeformation>
+	<CentrMasses>
+		<CentrMass id="0">
+			<X_mm>64.7</X_mm>
+			<Y_mm>9.53</Y_mm>
+			<Z_mm>245.6</Z_mm>
+		</CentrMass>
+		<CentrMass id="1">
+			<X_mm>189.35</X_mm>
+			<Y_mm>-153.91</Y_mm>
+			<Z_mm>580.06</Z_mm>
+		</CentrMass>
+		<CentrMass id="2">
+			<X_mm>268.51</X_mm>
+			<Y_mm>-19.43</Y_mm>
+			<Z_mm>890.19</Z_mm>
+		</CentrMass>
+		<CentrMass id="3">
+			<X_mm>619.12</X_mm>
+			<Y_mm>-4.65</Y_mm>
+			<Z_mm>883.46</Z_mm>
+		</CentrMass>
+		<CentrMass id="4">
+			<X_mm>853.91</X_mm>
+			<Y_mm>14.36</Y_mm>
+			<Z_mm>884.08</Z_mm>
+		</CentrMass>
+		<CentrMass id="5">
+			<X_mm>900.0</X_mm>
+			<Y_mm>0.0</Y_mm>
+			<Z_mm>1000.0</Z_mm>
+		</CentrMass>
+	</CentrMasses>
+	<Masses>
+		<Mass id="0">
+			<Mass_kg>63.69</Mass_kg>
+		</Mass>
+		<Mass id="1">
+			<Mass_kg>11.23</Mass_kg>
+		</Mass>
+		<Mass id="2">
+			<Mass_kg>16.56</Mass_kg>
+		</Mass>
+		<Mass id="3">
+			<Mass_kg>10.646</Mass_kg>
+		</Mass>
+		<Mass id="4">
+			<Mass_kg>15.88</Mass_kg>
+		</Mass>
+		<Mass id="5">
+			<Mass_kg>6.9</Mass_kg>
+		</Mass>
+	</Masses>
+	<JointsAtCM>
+		<JointAtCM id="0">
+			<ZeroPos_deg>0.0</ZeroPos_deg>
+		</JointAtCM>
+		<JointAtCM id="1">
+			<ZeroPos_deg>2.5</ZeroPos_deg>
+		</JointAtCM>
+		<JointAtCM id="2">
+			<ZeroPos_deg>0.0</ZeroPos_deg>
+		</JointAtCM>
+		<JointAtCM id="3">
+			<ZeroPos_deg>0.0</ZeroPos_deg>
+		</JointAtCM>
+		<JointAtCM id="4">
+			<ZeroPos_deg>0.0</ZeroPos_deg>
+		</JointAtCM>
+		<JointAtCM id="5">
+			<ZeroPos_deg>0.0</ZeroPos_deg>
+		</JointAtCM>
+	</JointsAtCM>
+	<JointsAtNullDeformation>
+		<JointAtNullDeformation id="0">
+			<NullDeformation_deg>0.0</NullDeformation_deg>
+		</JointAtNullDeformation>
+		<JointAtNullDeformation id="1">
+			<NullDeformation_deg>0.0</NullDeformation_deg>
+		</JointAtNullDeformation>
+		<JointAtNullDeformation id="2">
+			<NullDeformation_deg>90.0</NullDeformation_deg>
+		</JointAtNullDeformation>
+		<JointAtNullDeformation id="3">
+			<NullDeformation_deg>0.0</NullDeformation_deg>
+		</JointAtNullDeformation>
+		<JointAtNullDeformation id="4">
+			<NullDeformation_deg>90.0</NullDeformation_deg>
+		</JointAtNullDeformation>
+		<JointAtNullDeformation id="5">
+			<NullDeformation_deg>0.0</NullDeformation_deg>
+		</JointAtNullDeformation>
+	</JointsAtNullDeformation>
+</ArmDeformation>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DrivesControllerV2>
+	<Base>
+		<BindAddr>0.0.0.0</BindAddr>
+		<BindPort>15002</BindPort>
+		<ServoPort>9002</ServoPort>
+	</Base>
+	<ReplyTimeouts>
+		<Default>500</Default>
+		<SetReady>4000</SetReady>
+		<GetState>100</GetState>
+	</ReplyTimeouts>
+	<ServoControllers>
+		<sdc_board id="0">
+			<ServoNetAddr>127.0.0.1</ServoNetAddr>
+			<JointsCount>6</JointsCount>
+		</sdc_board>
+	</ServoControllers>
+	<IdleTimeout>
+		5000
+		<!--ms-->
+	</IdleTimeout>
+	<ExchangeDelay>
+		600
+		<!--us, not in use-->
+	</ExchangeDelay>
+	<ServoStartDelay>
+		12
+		<!--ms, not in use-->
+	</ServoStartDelay>
+	<NormalEncDiff>5</NormalEncDiff>
+	<DefaultAnswerWaitMs>50</DefaultAnswerWaitMs>
+	<GetProgressAnswerWaitMs>40</GetProgressAnswerWaitMs>
+	<GetProgressPeriodMs>40</GetProgressPeriodMs>
+	<MaxTimeDifferenceUs>30000</MaxTimeDifferenceUs>
+	<HardwareBufferMaxSize>20</HardwareBufferMaxSize>
+	<HardwareBufferTimeMs>500</HardwareBufferTimeMs>
+	<CmdResendMaxAttempts>3</CmdResendMaxAttempts>
+	<CmdTimeGainUs>20000</CmdTimeGainUs>
+	<StopTimeMs>400</StopTimeMs>
+	<MinStopTimeMs>20</MinStopTimeMs>
+	<MaxPauseTimeMs>800</MaxPauseTimeMs>
+	<MaxCancelTimeMs>700</MaxCancelTimeMs>
+	<EnableServiceNotifications>false</EnableServiceNotifications>
+</DrivesControllerV2>

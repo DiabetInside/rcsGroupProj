@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApiServerData>
+	<LastGoodIp>0.0.0.0</LastGoodIp>
+	<LastGoodPort>8003</LastGoodPort>
+	<ChangeIpMode>false</ChangeIpMode>
+</ApiServerData>
+<DrivesHours>
+	<SystemTime>341570</SystemTime>
+	<EngineTime>0</EngineTime>
+</DrivesHours>
+<ClibrateJointStatus>
+	<JointStates>YYYYYY</JointStates>
+</ClibrateJointStatus>

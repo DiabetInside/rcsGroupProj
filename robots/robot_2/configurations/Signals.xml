@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Signals>
+	<tokens_path>RcsData/SignalTokens.xml</tokens_path>
+	<ask_period>10</ask_period>
+	<bus_list>
+		<bus id="0">
+			<bus_name>weld_source</bus_name>
+			<bus_uuid>ModbusTCPBusForDevice:d970c1d4-fb2f-47d3-9ad5-f7ce9d82b8a4</bus_uuid>
+			<input_map>
+				<bus_offset>1000</bus_offset>
+				<bus_width>10</bus_width>
+			</input_map>
+			<output_map>
+				<bus_offset>1000</bus_offset>
+				<bus_width>8</bus_width>
+			</output_map>
+		</bus>
+	</bus_list>
+</Signals>

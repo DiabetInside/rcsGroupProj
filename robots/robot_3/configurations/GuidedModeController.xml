@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GuidedModeController>
+	<IsGuidedEnabled>false</IsGuidedEnabled>
+	<InputSignals>
+		<iResetErrors>i1.100.0</iResetErrors>
+		<iServoOn>i1.100.1</iServoOn>
+		<iBoolChangePrograms>false</iBoolChangePrograms>
+		<iChangePrograms>i1.100.2</iChangePrograms>
+		<iStartPrograms>i1.100.3</iStartPrograms>
+		<iRestartPrograms>i1.100.4</iRestartPrograms>
+	</InputSignals>
+	<OutputSignals>
+		<oBoolErrorId>true</oBoolErrorId>
+		<oErrorId>o16.100.0</oErrorId>
+		<oBoolWarningId>true</oBoolWarningId>
+		<oWarningId>o16.102.0</oWarningId>
+		<oErrorStatus>o1.104.0</oErrorStatus>
+		<oBoolWarningStatus>true</oBoolWarningStatus>
+		<oWarningStatus>o1.104.1</oWarningStatus>
+		<oBoolExCtrlMode>true</oBoolExCtrlMode>
+		<oExCtrlMode>o1.104.2</oExCtrlMode>
+		<oBoolServoStatus>true</oBoolServoStatus>
+		<oServoStatus>o1.104.4</oServoStatus>
+		<oRunning>o1.104.5</oRunning>
+		<oProgramError>o1.104.6</oProgramError>
+		<oProgramStatuses>
+			<oProgramStatus id="0">
+				<oProgSignalType>MainProgram</oProgSignalType>
+				<oProgramStatusSignal>o3.106.0</oProgramStatusSignal>
+			</oProgramStatus>
+			<oProgramStatus id="1">
+				<oProgSignalType>Program1</oProgSignalType>
+				<oProgramStatusSignal>o3.106.3</oProgramStatusSignal>
+			</oProgramStatus>
+		</oProgramStatuses>
+	</OutputSignals>
+	<ProgramsInfo>
+		<IsPlcSetProgramEnabled>false</IsPlcSetProgramEnabled>
+		<PredefinedPrograms>
+			<MainProgram>between_carousels_0_1.py</MainProgram>
+			<ExtraPrograms/>
+		</PredefinedPrograms>
+		<PCLDefinedParams>
+			<iPLCMainProgramAddress>i4.1.0</iPLCMainProgramAddress>
+			<InputProgSignals>
+				<InputProgSignal id="0">
+					<iPLCProgramIsBackground>true</iPLCProgramIsBackground>
+					<iProgramSignal>i4.1.4</iProgramSignal>
+				</InputProgSignal>
+			</InputProgSignals>
+			<OutputProgSignals>
+				<OutputProgSignal id="0">
+					<oProgSignalType>MainProgram</oProgSignalType>
+					<oProgramSignal>o4.6.0</oProgramSignal>
+				</OutputProgSignal>
+				<OutputProgSignal id="1">
+					<oProgSignalType>Program1</oProgSignalType>
+					<oProgramSignal>o4.6.4</oProgramSignal>
+				</OutputProgSignal>
+			</OutputProgSignals>
+			<ProgramPairIds/>
+		</PCLDefinedParams>
+	</ProgramsInfo>
+	<SpeedControl>
+		<ChangeSpeedEnabled>true</ChangeSpeedEnabled>
+		<ChangeSpeedValue>100</ChangeSpeedValue>
+		<ChangeSpeedAnywayByServoOn>false</ChangeSpeedAnywayByServoOn>
+		<ChangeSpeedSignalValue>i1.100.5</ChangeSpeedSignalValue>
+		<ChangeSpeedLoadValueFromSignal>true</ChangeSpeedLoadValueFromSignal>
+		<ChangeSpeedSignalForValue>i8.102.0</ChangeSpeedSignalForValue>
+		<oBoolSpeedStatus>true</oBoolSpeedStatus>
+		<SpeedStatus>o8.105.0</SpeedStatus>
+	</SpeedControl>
+</GuidedModeController>

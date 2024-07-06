@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RcpDataProvider>
+	<GlobalDataPath>RcsData/GlobalDataFile.xml</GlobalDataPath>
+	<GlobalParametersPath>RcsData/GlobalVariables/</GlobalParametersPath>
+		<PathToGlobalDataTools>RcsData/GlobalDataTools.xml</PathToGlobalDataTools>
+	<PathToGlobalDataFrames>RcsData/GlobalDataFrames.xml</PathToGlobalDataFrames>
+</RcpDataProvider>

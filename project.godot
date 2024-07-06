@@ -20,6 +20,7 @@ _global_script_class_icons={
 
 [Rcs]
 
+RcsPart/MinimumAltitude=-500.0
 screenshots_folder="res://screenshots"
 ProcessManager/launch_HMI_at_startup=false
 ProcessManager/enable_debug_console=false

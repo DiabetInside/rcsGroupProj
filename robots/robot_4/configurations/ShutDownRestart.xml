@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShutDownRestart>
+	<ModbusInUse>false</ModbusInUse>
+	<serial_port_name>COM7</serial_port_name>
+	<boud_rate>115200</boud_rate>
+	<modbus_id>192</modbus_id>
+	<PerepInUse>false</PerepInUse>
+	<BindAddr>0.0.0.0</BindAddr>
+	<BindPort>0</BindPort>
+	<DeviceAddr>192.168.9.116</DeviceAddr>
+	<DevicePort>1025</DevicePort>
+	<PowerChannel>1</PowerChannel>
+	<PlayChannel>2</PlayChannel>
+	<BatteryChannel>1</BatteryChannel>
+	<SendStateChannel>1</SendStateChannel>
+	<SendHMIData>false</SendHMIData>
+	<DisableBySignalType>
+		<DisableBySignal>false</DisableBySignal>
+		<DisableOnZero>false</DisableOnZero>
+		<WaitSignalTime>3000</WaitSignalTime>
+		<SignalAddress>i1.0.0</SignalAddress>
+		<EnableOnStart/>
+		<DisableOnEnd/>
+	</DisableBySignalType>
+</ShutDownRestart>

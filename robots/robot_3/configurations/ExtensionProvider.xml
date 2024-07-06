@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionProvider>
+	<interfaces>
+		<extensibleInterface id="0">
+			<name>SIGNAL_BUS</name>
+			<guid>8657F406-982D-459E-A6AF-C57F07A75C2A</guid>
+			<path>BusDlls</path>
+		</extensibleInterface>
+		<extensibleInterface id="1">
+			<name>RCP_COMMAND_LIBRARY</name>
+			<guid>CC3DCA5A-882A-4FE3-84A0-202D58FE6013</guid>
+			<path>RcpLibraries</path>
+		</extensibleInterface>
+		<extensibleInterface id="2">
+			<name>ROBOT_SOURCE</name>
+			<guid>494E8FFA-A2A7-4C9E-9FC2-90D5FA9FDE07</guid>
+			<path>Robots</path>
+		</extensibleInterface>
+	</interfaces>
+</ExtensionProvider>

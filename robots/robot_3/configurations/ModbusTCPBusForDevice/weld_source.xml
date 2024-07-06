@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModbusTCPBusForDevice>
+	<ReadPeriod>10</ReadPeriod>
+	<ModbusObjects>
+		<ModbusObject id="0">
+			<DisableModule>true</DisableModule>
+			<ModbusAddress>127.0.0.1</ModbusAddress>
+			<ModbusPort>27001</ModbusPort>
+			<DeviceId>1</DeviceId>
+			<ModbusObjectName>weld_source</ModbusObjectName>
+			<EmitError>true</EmitError>
+			<ResMemInput>10</ResMemInput>
+			<InputRegisters>
+				<Register id="0">
+					<RegisterReadType>Read_Input</RegisterReadType>
+					<SpanStart>0</SpanStart>
+					<RegisterCount>5</RegisterCount>
+					<InverseBytes>false</InverseBytes>
+				</Register>
+			</InputRegisters>
+			<ResMemOutput>8</ResMemOutput>
+			<OutputRegisters>
+				<Register id="0">
+					<RegisterWriteType>Write_Holder</RegisterWriteType>
+					<SpanStart>0</SpanStart>
+					<RegisterCount>4</RegisterCount>
+					<InverseBytes>false</InverseBytes>
+				</Register>
+			</OutputRegisters>
+		</ModbusObject>
+	</ModbusObjects>
+</ModbusTCPBusForDevice>
