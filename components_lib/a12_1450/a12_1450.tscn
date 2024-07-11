@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://components_lib/a12_1450/meshes/j2.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://components_lib/a12_1450/meshes/j3.mesh" type="ArrayMesh" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://components_lib/a12_1450/materials/black.tres" type="Material" id=8]
 [ext_resource path="res://components_lib/a12_1450/meshes/flange.tres" type="CylinderMesh" id=9]
 [ext_resource path="res://components_lib/a12_1450/materials/mat_0.material" type="Material" id=10]
+[ext_resource path="res://components_lib/grab/grab.tscn" type="PackedScene" id=11]
 
 [node name="a12_1450" type="RobotEmulation"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13.3023, 0 )
@@ -22,7 +23,6 @@ restart_robot = null
 generate_new_id = null
 reset_configuration = null
 reconfigure_ports_by_id = null
-api_server_ip = "0.0.0.0"
 api_server_port = 8003
 read_server_config = null
 update_server_config = null
@@ -35,7 +35,6 @@ kinematics_config_origin = "res://components_lib/a12_1450/rcs_data/configuration
 reset_kinematics_config = null
 read_joints_config = null
 update_joints_config = null
-drives_controller_ip = "127.0.0.1"
 drives_controller_port = 8888
 joints_count = 6
 joints_with_positioners = 6
@@ -260,3 +259,17 @@ redirect_selection = true
 
 [node name="Joint1" type="AttachmentBase" parent="base/link1"]
 redirect_selection = true
+
+[node name="AttachmentBase" type="AttachmentBase" parent="base/link1"]
+transform = Transform( -1, 8.38153e-15, -8.74228e-08, 8.74228e-08, -4.37113e-08, -1, -1.22029e-14, -1, 4.37113e-08, 779, -4.91232e-05, -867 )
+
+[node name="grab" parent="base/link1/AttachmentBase" instance=ExtResource( 11 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -146.678, 0, -1.28229e-05 )
+lifted_of_arms_mm = 100.0
+width_tip_of_arms_mm = 10.0
+width_of_arms_mm = 54.0
+lenght_of_arms_mm = 64.0
+radius_of_flange_mm = 42.0
+hight_of_flange_mm = 23.0
+do_grab = false
+grab_state = false

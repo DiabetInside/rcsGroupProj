@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SafetyStateV3>
-	<safety_multiplyer>30.000000</safety_multiplyer>
+	<safety_multiplyer>30</safety_multiplyer>
 	<ask_period>100</ask_period>
 	<device_address>127.0.0.1</device_address>
-	<device_port>10001</device_port>
+	<device_port>17003</device_port>
 	<bind_address>0.0.0.0</bind_address>
 	<bind_port>0</bind_port>
 	<timings>
@@ -17,14 +17,14 @@
 		<reply_timeout>1000</reply_timeout>
 	</timings>
 	<safe_speed_settings>
-		<SafeDecartSpeed>200.000000</SafeDecartSpeed>
+		<SafeDecartSpeed>200</SafeDecartSpeed>
 		<SafeSpeedPerJoint>
-			<SafeSpeedPerJointPart id="0">60.000000</SafeSpeedPerJointPart>
-			<SafeSpeedPerJointPart id="1">60.000000</SafeSpeedPerJointPart>
-			<SafeSpeedPerJointPart id="2">60.000000</SafeSpeedPerJointPart>
-			<SafeSpeedPerJointPart id="3">60.000000</SafeSpeedPerJointPart>
-			<SafeSpeedPerJointPart id="4">60.000000</SafeSpeedPerJointPart>
-			<SafeSpeedPerJointPart id="5">60.000000</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="0">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="1">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="2">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="3">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="4">60</SafeSpeedPerJointPart>
+			<SafeSpeedPerJointPart id="5">60</SafeSpeedPerJointPart>
 		</SafeSpeedPerJoint>
 	</safe_speed_settings>
 </SafetyStateV3>

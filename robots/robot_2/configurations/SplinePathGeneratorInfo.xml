@@ -2,150 +2,145 @@
 <SplinePathGeneratorInfo>
 	<max_encoder_per_frame>1000</max_encoder_per_frame>
 	<allow_recover_move>true</allow_recover_move>
-	<skip_acceleration>false</skip_acceleration>
-	<skip_speed_warnings>true</skip_speed_warnings>
-	<skip_singularity_check>false</skip_singularity_check>
-	<min_x>-150000004759552.000000</min_x>
-	<min_y>-150000004759552.000000</min_y>
-	<min_z>-150000004759552.000000</min_z>
-	<max_x>150000004759552.000000</max_x>
-	<max_y>1000000.000000</max_y>
-	<max_z>150000004759552.000000</max_z>
-	<law_iteration_step>4.000000</law_iteration_step>
-	<spline_iteration_step>60.000000</spline_iteration_step>
-	<smooth_acceleration>2500.000000</smooth_acceleration>
-	<smooth_time_rate>1.500000</smooth_time_rate>
-	<smooth_safespline_misrate>0.050000</smooth_safespline_misrate>
-	<default_acceleration>5000.000000</default_acceleration>
-	<wrist_max_reorintation_speed>500.000000</wrist_max_reorintation_speed>
+	<min_x>-1.50000005e+014</min_x>
+	<min_y>-1.50000005e+014</min_y>
+	<min_z>-1.50000005e+014</min_z>
+	<max_x>1.50000005e+014</max_x>
+	<max_y>1000000</max_y>
+	<max_z>1.50000005e+014</max_z>
+	<law_iteration_step>4</law_iteration_step>
+	<spline_iteration_step>60</spline_iteration_step>
+	<smooth_acceleration>2500</smooth_acceleration>
+	<smooth_time_rate>1.5</smooth_time_rate>
+	<smooth_safespline_misrate>0.0500000007</smooth_safespline_misrate>
+	<default_acceleration>5000</default_acceleration>
 	<velocity_compute_epsilon>0.00999999978</velocity_compute_epsilon>
 	<max_encoder_difference>10</max_encoder_difference>
-	<pattern_max_frequency>10.000000</pattern_max_frequency>
 	<JointsData>
 		<joint id="0">
-			<zero_angle>0.000000</zero_angle>
-			<gear_multiplicator>121.000000</gear_multiplicator>
+			<zero_angle>0</zero_angle>
+			<gear_multiplicator>121</gear_multiplicator>
 			<full_circle_impulse>2000</full_circle_impulse>
-			<max_angle_speed>3000.000000</max_angle_speed>
-			<acceleration_time>500.000000</acceleration_time>
-			<singular_criteria_deg>29.752066</singular_criteria_deg>
-			<max_deg>180.000000</max_deg>
-			<min_deg>-180.000000</min_deg>
-			<max_line>1000.000000</max_line>
-			<min_line>-1000.000000</min_line>
-			<max_linear_speed_mm_sec>2000.000000</max_linear_speed_mm_sec>
+			<max_angle_speed>3000</max_angle_speed>
+			<acceleration_time>500</acceleration_time>
+			<singular_criteria_deg>20</singular_criteria_deg>
+			<max_deg>180</max_deg>
+			<min_deg>-180</min_deg>
+			<max_line>150</max_line>
+			<min_line>-150</min_line>
+			<max_linear_speed_mm_sec>200</max_linear_speed_mm_sec>
 			<inverse_movement>false</inverse_movement>
 			<is_linear_type>false</is_linear_type>
 			<is_ignore_z_mark>false</is_ignore_z_mark>
 			<is_allowed_deustation>false</is_allowed_deustation>
 			<calibration_type>SearchZMarkNearVisualMark</calibration_type>
 			<calibr_speed_percent>10.0</calibr_speed_percent>
-			<calibration_move_back_steps>1000</calibration_move_back_steps>
+			<calibration_move_back_steps>10000</calibration_move_back_steps>
 			<calibration_dir_positive>true</calibration_dir_positive>
 		</joint>
 		<joint id="1">
-			<zero_angle>0.000000</zero_angle>
-			<gear_multiplicator>121.000000</gear_multiplicator>
+			<zero_angle>0</zero_angle>
+			<gear_multiplicator>121</gear_multiplicator>
 			<full_circle_impulse>2000</full_circle_impulse>
-			<max_angle_speed>3000.000000</max_angle_speed>
-			<acceleration_time>600.000000</acceleration_time>
-			<singular_criteria_deg>29.752066</singular_criteria_deg>
-			<max_deg>150.000000</max_deg>
-			<min_deg>-150.000000</min_deg>
-			<max_line>1000.000000</max_line>
-			<min_line>-1000.000000</min_line>
-			<max_linear_speed_mm_sec>2000.000000</max_linear_speed_mm_sec>
+			<max_angle_speed>3000</max_angle_speed>
+			<acceleration_time>600</acceleration_time>
+			<singular_criteria_deg>20</singular_criteria_deg>
+			<max_deg>150</max_deg>
+			<min_deg>-150</min_deg>
+			<max_line>150</max_line>
+			<min_line>-150</min_line>
+			<max_linear_speed_mm_sec>200</max_linear_speed_mm_sec>
 			<inverse_movement>false</inverse_movement>
 			<is_linear_type>false</is_linear_type>
 			<is_ignore_z_mark>false</is_ignore_z_mark>
 			<is_allowed_deustation>false</is_allowed_deustation>
 			<calibration_type>SearchZMarkNearVisualMark</calibration_type>
 			<calibr_speed_percent>10.0</calibr_speed_percent>
-			<calibration_move_back_steps>1000</calibration_move_back_steps>
+			<calibration_move_back_steps>10000</calibration_move_back_steps>
 			<calibration_dir_positive>true</calibration_dir_positive>
 		</joint>
 		<joint id="2">
-			<zero_angle>0.000000</zero_angle>
-			<gear_multiplicator>121.000000</gear_multiplicator>
+			<zero_angle>0</zero_angle>
+			<gear_multiplicator>121</gear_multiplicator>
 			<full_circle_impulse>2000</full_circle_impulse>
-			<max_angle_speed>4000.000000</max_angle_speed>
-			<acceleration_time>600.000000</acceleration_time>
-			<singular_criteria_deg>29.752066</singular_criteria_deg>
-			<max_deg>150.000000</max_deg>
-			<min_deg>-150.000000</min_deg>
-			<max_line>1000.000000</max_line>
-			<min_line>-1000.000000</min_line>
-			<max_linear_speed_mm_sec>2000.000000</max_linear_speed_mm_sec>
+			<max_angle_speed>4000</max_angle_speed>
+			<acceleration_time>600</acceleration_time>
+			<singular_criteria_deg>20</singular_criteria_deg>
+			<max_deg>150</max_deg>
+			<min_deg>-150</min_deg>
+			<max_line>150</max_line>
+			<min_line>-150</min_line>
+			<max_linear_speed_mm_sec>200</max_linear_speed_mm_sec>
 			<inverse_movement>false</inverse_movement>
 			<is_linear_type>false</is_linear_type>
 			<is_ignore_z_mark>false</is_ignore_z_mark>
 			<is_allowed_deustation>false</is_allowed_deustation>
 			<calibration_type>SearchZMarkNearVisualMark</calibration_type>
 			<calibr_speed_percent>10.0</calibr_speed_percent>
-			<calibration_move_back_steps>1000</calibration_move_back_steps>
+			<calibration_move_back_steps>10000</calibration_move_back_steps>
 			<calibration_dir_positive>true</calibration_dir_positive>
 		</joint>
 		<joint id="3">
-			<zero_angle>0.000000</zero_angle>
-			<gear_multiplicator>101.000000</gear_multiplicator>
+			<zero_angle>0</zero_angle>
+			<gear_multiplicator>101</gear_multiplicator>
 			<full_circle_impulse>2000</full_circle_impulse>
-			<max_angle_speed>3000.000000</max_angle_speed>
-			<acceleration_time>500.000000</acceleration_time>
-			<singular_criteria_deg>35.643566</singular_criteria_deg>
-			<max_deg>450.000000</max_deg>
-			<min_deg>-450.000000</min_deg>
-			<max_line>1000.000000</max_line>
-			<min_line>-1000.000000</min_line>
-			<max_linear_speed_mm_sec>2000.000000</max_linear_speed_mm_sec>
+			<max_angle_speed>3000</max_angle_speed>
+			<acceleration_time>500</acceleration_time>
+			<singular_criteria_deg>20</singular_criteria_deg>
+			<max_deg>450</max_deg>
+			<min_deg>-450</min_deg>
+			<max_line>150</max_line>
+			<min_line>-150</min_line>
+			<max_linear_speed_mm_sec>200</max_linear_speed_mm_sec>
 			<inverse_movement>false</inverse_movement>
 			<is_linear_type>false</is_linear_type>
 			<is_ignore_z_mark>false</is_ignore_z_mark>
 			<is_allowed_deustation>false</is_allowed_deustation>
 			<calibration_type>SearchZMarkNearVisualMark</calibration_type>
 			<calibr_speed_percent>10.0</calibr_speed_percent>
-			<calibration_move_back_steps>1000</calibration_move_back_steps>
+			<calibration_move_back_steps>10000</calibration_move_back_steps>
 			<calibration_dir_positive>true</calibration_dir_positive>
 		</joint>
 		<joint id="4">
-			<zero_angle>0.000000</zero_angle>
-			<gear_multiplicator>120.000000</gear_multiplicator>
+			<zero_angle>0</zero_angle>
+			<gear_multiplicator>120</gear_multiplicator>
 			<full_circle_impulse>2000</full_circle_impulse>
-			<max_angle_speed>3000.000000</max_angle_speed>
-			<acceleration_time>400.000000</acceleration_time>
-			<singular_criteria_deg>30.000000</singular_criteria_deg>
-			<max_deg>123.000000</max_deg>
-			<min_deg>-123.000000</min_deg>
-			<max_line>1000.000000</max_line>
-			<min_line>-1000.000000</min_line>
-			<max_linear_speed_mm_sec>2000.000000</max_linear_speed_mm_sec>
+			<max_angle_speed>3000</max_angle_speed>
+			<acceleration_time>400</acceleration_time>
+			<singular_criteria_deg>20</singular_criteria_deg>
+			<max_deg>123</max_deg>
+			<min_deg>-123</min_deg>
+			<max_line>150</max_line>
+			<min_line>-150</min_line>
+			<max_linear_speed_mm_sec>200</max_linear_speed_mm_sec>
 			<inverse_movement>false</inverse_movement>
 			<is_linear_type>false</is_linear_type>
 			<is_ignore_z_mark>false</is_ignore_z_mark>
 			<is_allowed_deustation>false</is_allowed_deustation>
 			<calibration_type>SearchZMarkNearVisualMark</calibration_type>
 			<calibr_speed_percent>10.0</calibr_speed_percent>
-			<calibration_move_back_steps>1000</calibration_move_back_steps>
+			<calibration_move_back_steps>10000</calibration_move_back_steps>
 			<calibration_dir_positive>true</calibration_dir_positive>
 		</joint>
 		<joint id="5">
-			<zero_angle>0.000000</zero_angle>
-			<gear_multiplicator>100.000000</gear_multiplicator>
+			<zero_angle>0</zero_angle>
+			<gear_multiplicator>100</gear_multiplicator>
 			<full_circle_impulse>2000</full_circle_impulse>
-			<max_angle_speed>5000.000000</max_angle_speed>
-			<acceleration_time>400.000000</acceleration_time>
-			<singular_criteria_deg>36.000000</singular_criteria_deg>
-			<max_deg>450.000000</max_deg>
-			<min_deg>-450.000000</min_deg>
-			<max_line>1000.000000</max_line>
-			<min_line>-1000.000000</min_line>
-			<max_linear_speed_mm_sec>2000.000000</max_linear_speed_mm_sec>
+			<max_angle_speed>5000</max_angle_speed>
+			<acceleration_time>400</acceleration_time>
+			<singular_criteria_deg>20</singular_criteria_deg>
+			<max_deg>450</max_deg>
+			<min_deg>-450</min_deg>
+			<max_line>150</max_line>
+			<min_line>-150</min_line>
+			<max_linear_speed_mm_sec>200</max_linear_speed_mm_sec>
 			<inverse_movement>false</inverse_movement>
 			<is_linear_type>false</is_linear_type>
 			<is_ignore_z_mark>false</is_ignore_z_mark>
 			<is_allowed_deustation>false</is_allowed_deustation>
 			<calibration_type>SearchZMarkNearVisualMark</calibration_type>
 			<calibr_speed_percent>10.0</calibr_speed_percent>
-			<calibration_move_back_steps>1000</calibration_move_back_steps>
+			<calibration_move_back_steps>10000</calibration_move_back_steps>
 			<calibration_dir_positive>true</calibration_dir_positive>
 		</joint>
 	</JointsData>
