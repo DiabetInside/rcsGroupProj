@@ -260,11 +260,12 @@ redirect_selection = true
 [node name="Joint1" type="AttachmentBase" parent="base/link1"]
 redirect_selection = true
 
-[node name="AttachmentBase" type="AttachmentBase" parent="base/link1"]
-transform = Transform( -1, 8.38153e-15, -8.74228e-08, 8.74228e-08, -4.37113e-08, -1, -1.22029e-14, -1, 4.37113e-08, 779, -4.91232e-05, -867 )
+[node name="Attachment" type="Attachment" parent="."]
+transform = Transform( 2.65431e-14, 1.62921e-07, 1, 1, -1.62921e-07, 0, 1.62921e-07, 1, -1.62921e-07, 934, 0, 866 )
+base_path = NodePath("a12_1450/base/link1/link2/link3/link4/link5/link6/Flange")
+attachment_state = 0
 
-[node name="grab" parent="base/link1/AttachmentBase" instance=ExtResource( 11 )]
-transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -146.678, 0, -1.28229e-05 )
+[node name="grab" parent="Attachment" instance=ExtResource( 11 )]
 lifted_of_arms_mm = 100.0
 width_tip_of_arms_mm = 10.0
 width_of_arms_mm = 54.0

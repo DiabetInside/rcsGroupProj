@@ -2,8 +2,8 @@
 <DrivesControllerV2>
 	<Base>
 		<BindAddr>0.0.0.0</BindAddr>
-		<BindPort>15000</BindPort>
-		<ServoPort>8888</ServoPort>
+		<BindPort>15001</BindPort>
+		<ServoPort>9001</ServoPort>
 	</Base>
 	<ReplyTimeouts>
 		<Default>500</Default>
@@ -30,7 +30,7 @@
 	</ServoStartDelay>
 	<NormalEncDiff>5</NormalEncDiff>
 	<DefaultAnswerWaitMs>50</DefaultAnswerWaitMs>
-	<GetProgressAnswerWaitMs>10</GetProgressAnswerWaitMs>
+	<GetProgressAnswerWaitMs>40</GetProgressAnswerWaitMs>
 	<GetProgressPeriodMs>40</GetProgressPeriodMs>
 	<MaxTimeDifferenceUs>30000</MaxTimeDifferenceUs>
 	<HardwareBufferMaxSize>20</HardwareBufferMaxSize>
@@ -41,5 +41,5 @@
 	<MinStopTimeMs>20</MinStopTimeMs>
 	<MaxPauseTimeMs>800</MaxPauseTimeMs>
 	<MaxCancelTimeMs>700</MaxCancelTimeMs>
-	<EnableServiceNotifications>false</EnableServiceNotifications>	
+	<EnableServiceNotifications>false</EnableServiceNotifications>
 </DrivesControllerV2>

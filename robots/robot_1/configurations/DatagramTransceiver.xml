@@ -2,7 +2,7 @@
 <DatagramTransceiver>
 	<LocalConnectionData>
 		<Ip>127.0.0.1</Ip>
-		<Port>30000</Port>
+		<Port>11001</Port>
 		<Tag>master_machine</Tag>
 	</LocalConnectionData>
 	<CommunicationAgents>
