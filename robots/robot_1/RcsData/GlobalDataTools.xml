@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Tools>
-
+	<Tool name="grab">
+		<id>1</id>
+		<coord>
+			<Xmm>0</Xmm>
+			<Ymm>0</Ymm>
+			<Zmm>0</Zmm>
+			<RxDeg>0</RxDeg>
+			<RyDeg>0</RyDeg>
+			<RzDeg>0</RzDeg>
+		</coord>
+		<Mass_kg>0</Mass_kg>
+		<Lx_mm>0</Lx_mm>
+		<Ly_mm>0</Ly_mm>
+		<Lz_mm>0</Lz_mm>
+		<Inertia>
+			<Jxx>1</Jxx>
+			<Jxy>0</Jxy>
+			<Jxz>0</Jxz>
+			<Jyx>0</Jyx>
+			<Jyy>1</Jyy>
+			<Jyz>0</Jyz>
+			<Jzx>0</Jzx>
+			<Jzy>0</Jzy>
+			<Jzz>1</Jzz>
+		</Inertia>
+		<DateChanged>2024-07-12T02:12:12</DateChanged>
+	</Tool>
 </Tools>

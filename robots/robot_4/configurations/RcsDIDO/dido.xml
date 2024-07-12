@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RcsDIDO>
+	<BindAddress>0.0.0.0</BindAddress>
+	<BindPort>0</BindPort>
+	<DeviceAddress>127.0.0.1</DeviceAddress>
+	<DevicePort>10743</DevicePort>
+	<DICount>16</DICount>
+	<DOCount>16</DOCount>
+	<AnalogSupport>false</AnalogSupport>
+	<AskPeriod>100</AskPeriod>
+	<ReplyAwaitTime>10</ReplyAwaitTime>
+	<PermissibleNoRepliesCount>4</PermissibleNoRepliesCount>
+	<NotifyOnNoReply>false</NotifyOnNoReply>
+	<InputsOnly>false</InputsOnly>
+</RcsDIDO>

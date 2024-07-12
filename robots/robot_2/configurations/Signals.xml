@@ -15,5 +15,17 @@
 				<bus_width>8</bus_width>
 			</output_map>
 		</bus>
+		<bus id="1">
+			<bus_name>dido</bus_name>
+			<bus_uuid>RcsDIDO:a402dba7-f827-47f6-9a6f-36ed70448459</bus_uuid>
+			<input_map>
+				<bus_offset>0</bus_offset>
+				<bus_width>2</bus_width>
+			</input_map>
+			<output_map>
+				<bus_offset>0</bus_offset>
+				<bus_width>2</bus_width>
+			</output_map>
+		</bus>
 	</bus_list>
 </Signals>

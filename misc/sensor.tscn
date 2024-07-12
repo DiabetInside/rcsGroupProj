@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.211765, 0.203922, 0.203922, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="CylinderMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 10, 30, 100 )
+
+[node name="sensor_2" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -0.165807, -59.9979, 0, 19.9993, -0.497422, 0, 0, 0, 10, -4.97083, 1.14172, -120.082 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 0.5, -2.22045e-16, 4.65661e-10, 4.65661e-10, -4.32743e-08, -0.165, 0, 0.99, -7.21238e-09, 0.00527954, 0.830602, 0.0236874 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance/MeshInstance"]
+transform = Transform( 0.3, -1.11022e-16, -9.31323e-10, -5.83114e-19, 0.3, 2.66454e-15, 7.57773e-26, 0, 0.3, 0, 0.70225, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( -0.165807, -59.9979, 0, 19.9993, -0.497422, 0, 0, 0, 10, -9.81714, 2.20032, 120.766 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance2"]
+transform = Transform( 0.499938, -0.000875519, -3.72529e-09, 1.19908e-08, -1.5878e-07, 0.174482, -0.000445006, -0.983595, -2.8163e-08, -0.00941467, 0.823014, -0.0246124 )
+material_override = SubResource( 3 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance" type="MeshInstance" parent="MeshInstance2/MeshInstance2"]
+transform = Transform( 0.3, -1.11022e-16, -9.31323e-10, -5.83114e-19, 0.3, 2.66454e-15, 7.57773e-26, 0, 0.3, 0, 0.70225, 0 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="Area2" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61249, 32.7014, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.378, -30, 0 )
+shape = SubResource( 7 )

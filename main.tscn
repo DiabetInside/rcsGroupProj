@@ -1,0 +1,953 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://misc/stopper.tscn" type="PackedScene" id=1]
+[ext_resource path="res://misc/panorama_image.png" type="Texture" id=2]
+[ext_resource path="res://components_lib/a12_1450/a12_1450.tscn" type="PackedScene" id=3]
+[ext_resource path="res://components_lib/basic_pedestal/pedestal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://misc/sensor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://components_lib/linear_z_conveyor/linear_Z_conveyor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://components_lib/box/box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://misc/RcsSignalsHolder.gd" type="Script" id=9]
+[ext_resource path="res://misc/lutaya zetka.jpg" type="Texture" id=10]
+[ext_resource path="res://components_lib/box/scripts/box.gd" type="Script" id=11]
+[ext_resource path="res://misc/cement.jpg" type="Texture" id=12]
+[ext_resource path="res://components_lib/pallet/pallet.tscn" type="PackedScene" id=13]
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 1024, 690 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 10 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 50, 25, 50 )
+
+[sub_resource type="PanoramaSky" id=4]
+panorama = ExtResource( 2 )
+
+[sub_resource type="Environment" id=5]
+background_mode = 2
+background_sky = SubResource( 4 )
+background_sky_custom_fov = 90.0
+background_color = Color( 0.0941176, 0.0941176, 0.133333, 1 )
+fog_color = Color( 0.239216, 0.462745, 0.345098, 1 )
+fog_depth_enabled = false
+ss_reflections_enabled = true
+ss_reflections_max_steps = 512
+ss_reflections_depth_tolerance = 27.3
+
+[sub_resource type="PlaneMesh" id=6]
+size = Vector2( 6000, 8000 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 12 )
+metallic = 1.0
+roughness = 0.0
+uv1_scale = Vector3( 1, 2.643, 1 )
+
+[node name="„Если хочешь сделать что-то хорошо, сделай это сам“ —  Фердинанд Порше" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65869, 421.337, 0 )
+
+[node name="Z-Конвейер 1" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -241.271, -0.00317383, 3742.75 )
+SpeedMmS = 200.0
+DriveRunning = true
+rotation_mode = 0
+height_conveyor_MM = 250.0
+
+[node name="Преграда" parent="Z-Конвейер 1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2500, 1000, 0 )
+
+[node name="Сенсор" parent="Z-Конвейер 1" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2305.01, 1042.69, 0 )
+
+[node name="Z-Конвейер 2" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2336.96, 0, 2257.16 )
+SpeedMmS = 200.0
+DriveRunning = true
+height_conveyor_MM = 1000.0
+
+[node name="Преграда" parent="Z-Конвейер 2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2427.91, 1750, 0 )
+
+[node name="Сенсор" parent="Z-Конвейер 2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2301.73, 1795.47, 0 )
+
+[node name="Z-Конвейер 3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 0, 750 )
+SpeedMmS = 200.0
+DriveRunning = true
+height_conveyor_MM = 1750.0
+
+[node name="Top" parent="Z-Конвейер 3" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1036.54, 2435.05, 0 )
+
+[node name="conveyor" parent="Z-Конвейер 3/Top" index="0"]
+transform = Transform( -1.4245, 1.50996e-07, 1.88745e-07, 2.15094e-07, 1, -1.09279e-07, 2.15094e-07, 8.74228e-08, 1.25, -750, 0, 0 )
+
+[node name="engine_right" parent="Z-Конвейер 3/Top/Engine" index="0"]
+transform = Transform( 0, -1, -4.0506e-17, -1, 0, -4.0506e-17, 4.0506e-17, 4.0506e-17, -1, 32, -156, -271.158 )
+
+[node name="engine_left" parent="Z-Конвейер 3/Top/Engine" index="1"]
+transform = Transform( 0, 0.999986, 0.00542794, -1, 0, 0, 0, -0.00542794, 0.999986, 32, -156, 291.158 )
+
+[node name="Board_right" parent="Z-Конвейер 3/Top/Board" index="0"]
+transform = Transform( -1.4245, 0, 0, 0, 1, -1.50996e-07, 0, 1.50996e-07, 1, 0.014245, 50, -238.095 )
+
+[node name="board_right" parent="Z-Конвейер 3/Top/Board/Board_right" index="0"]
+transform = Transform( 1, 0, -1.50996e-07, 0, -1, 0, 1.50996e-07, 0, 1, 523.119, 17, 27.346 )
+
+[node name="Board_left" parent="Z-Конвейер 3/Top/Board" index="1"]
+transform = Transform( -1.4245, 0, 0, 0, 1, -1.50996e-07, 0, 1.50996e-07, 1, 0.0999756, 50, 250 )
+
+[node name="board_left" parent="Z-Конвейер 3/Top/Board/Board_left" index="0"]
+transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, 521.79, 17.812, -12.79 )
+
+[node name="title" parent="Z-Конвейер 3/Middle/conveyor_s" index="0"]
+transform = Transform( 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 1750, 0 )
+base_translation = Vector3( 0, 1750, 0 )
+
+[node name="conveyor" parent="Z-Конвейер 3/Middle/conveyor_s/title/conv" index="0"]
+transform = Transform( -1.30114, 1.50996e-07, -1.88745e-07, 1.96467e-07, 1, 3.75219e-18, 1.96467e-07, -2.27967e-14, -1.25, -685.05, 0, 0 )
+
+[node name="Board_right" parent="Z-Конвейер 3/Middle/conveyor_s/title/Board" index="0"]
+transform = Transform( -1.30114, 0, 0, 0, -1, 0, 0, 0, -1, -0.0130114, 50, -238.095 )
+
+[node name="Board_left" parent="Z-Конвейер 3/Middle/conveyor_s/title/Board" index="1"]
+transform = Transform( -1.30114, 0, 0, 0, -1, 0, 0, 0, -1, 0, 50, 250 )
+
+[node name="board_left" parent="Z-Конвейер 3/Middle/conveyor_s/title/Board/Board_left" index="0"]
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 521.79, 17.812, 23.2834 )
+
+[node name="conveyor" parent="Z-Конвейер 3/Lower" index="0"]
+transform = Transform( 0.474834, 0, 0, 0, 1, 0, 0, 0, 1.25, 232.558, 1750, 0 )
+
+[node name="Board" parent="Z-Конвейер 3/Lower" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.008, 1750, -9.657 )
+
+[node name="Board_right" parent="Z-Конвейер 3/Lower/Board" index="0"]
+transform = Transform( 0.474834, 0, 0, 0, 1, 0, 0, 0, 1, 0.00474834, 50, -238.095 )
+
+[node name="Board_left" parent="Z-Конвейер 3/Lower/Board" index="1"]
+transform = Transform( 0.474834, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 250 )
+
+[node name="board_left" parent="Z-Конвейер 3/Lower/Board/Board_left" index="0"]
+transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, 496, 17.812, -12.79 )
+
+[node name="Legs_Generator_1" parent="Z-Конвейер 3" index="3"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 400, 0, -263.158 )
+row_step = Vector3( 857.744, 0, 0 )
+
+[node name="Leg_1_02afc33a-a62a-4983-b160-70b92bc2f062" type="Spatial" parent="Z-Конвейер 3/Legs_Generator_1" index="0"]
+creator_id = "02afc33a-a62a-4983-b160-70b92bc2f042"
+
+[node name="Leg_2_02afc33a-a62a-4983-b160-70b92bc2f062" type="Spatial" parent="Z-Конвейер 3/Legs_Generator_1" index="1"]
+creator_id = "02afc33a-a62a-4983-b160-70b92bc2f042"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 857.744, 0, 0 )
+
+[node name="Leg_3_02afc33a-a62a-4983-b160-70b92bc2f062" type="Spatial" parent="Z-Конвейер 3/Legs_Generator_1" index="2"]
+creator_id = "02afc33a-a62a-4983-b160-70b92bc2f042"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1715.49, 0, 0 )
+
+[node name="Leg_4_02afc33a-a62a-4983-b160-70b92bc2f062" type="Spatial" parent="Z-Конвейер 3/Legs_Generator_1" index="3"]
+creator_id = "02afc33a-a62a-4983-b160-70b92bc2f042"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2573.23, 0, 0 )
+
+[node name="Legs_Generator_2" parent="Z-Конвейер 3" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 400, 0, 263.158 )
+row_step = Vector3( -857.744, 0, 0 )
+
+[node name="Leg_1_02afc33a-a62a-4983-b160-70b92bc2f062" type="Spatial" parent="Z-Конвейер 3/Legs_Generator_2" index="0"]
+creator_id = "02afc33a-a62a-4983-b160-70b92bc2f042"
+
+[node name="Leg_2_02afc33a-a62a-4983-b160-70b92bc2f062" type="Spatial" parent="Z-Конвейер 3/Legs_Generator_2" index="1"]
+creator_id = "02afc33a-a62a-4983-b160-70b92bc2f042"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -857.744, 0, 0 )
+
+[node name="Leg_3_02afc33a-a62a-4983-b160-70b92bc2f062" type="Spatial" parent="Z-Конвейер 3/Legs_Generator_2" index="2"]
+creator_id = "02afc33a-a62a-4983-b160-70b92bc2f042"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1715.49, 0, 0 )
+
+[node name="Leg_4_02afc33a-a62a-4983-b160-70b92bc2f062" type="Spatial" parent="Z-Конвейер 3/Legs_Generator_2" index="3"]
+creator_id = "02afc33a-a62a-4983-b160-70b92bc2f042"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2573.23, 0, 0 )
+
+[node name="RcsAreaMonitor" parent="Z-Конвейер 3" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.25, 430, 1818, 0 )
+
+[node name="CollisionShape" parent="Z-Конвейер 3/RcsAreaMonitor" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -295.598, 0, 0 )
+
+[node name="Преграда" parent="Z-Конвейер 3" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2500, 2500, 0 )
+
+[node name="Сенсор" parent="Z-Конвейер 3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2393.12, 2542.11, 0 )
+
+[node name="Z" type="Spatial" parent="."]
+
+[node name="Z" type="MeshInstance" parent="Z"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2009.53, 644.728, 4054.62 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Z2" type="MeshInstance" parent="Z"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -625, 1425.69, 2562.18 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Z3" type="MeshInstance" parent="Z"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2014.72, 2160.6, 1086.37 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Пьедестал  1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1.3, 0, 0, 0, 1, 0, 0, 0, 1.3, -750, 0, 4500 )
+height = 250.0
+
+[node name="Пьедестал  2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 4500 )
+height = 250.0
+
+[node name="Пьедестал  3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -2500, 0, 3000 )
+height = 1000.0
+
+[node name="Пьедестал  4" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 1500 )
+height = 1750.0
+
+[node name="Пьедестал  5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -2500, 0, 0 )
+height = 2500.0
+
+[node name="Пьедестал  6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -1750, 0, 0 )
+height = 2500.0
+
+[node name="robot_1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, -750, 250, 4450 )
+robot_dir = "res://robots/robot_1"
+api_server_port = 8001
+safety_server_port = 10001
+drives_controller_port = 9001
+signal_bus_count = 1
+signal_buses_data/bus_1_/bus_type = 0
+signal_buses_data/bus_1_/bus_name = "dido"
+signal_buses_data/bus_1_/signal_holder_path = NodePath("RcsSignalsHolder")
+signal_buses_data/bus_1_/bus_ip = "127.0.0.1"
+signal_buses_data/bus_1_/bus_port = 10740
+signal_buses_data/bus_1_/handle_emulation = true
+signal_buses_data/bus_1_/inputs_memory_shift = 0
+signal_buses_data/bus_1_/inputs_memory_bytes = 2
+signal_buses_data/bus_1_/outputs_memory_shift = 0
+signal_buses_data/bus_1_/outputs_memory_bytes = 2
+signal_buses_data/bus_1_/delete_bus = null
+current_tool = 1
+tool_2/tool_name = "grab"
+tool_2/edit_offset = false
+tool_2/trail = false
+tool_2/points_limit = 1000
+tool_2/minimum_step = 0.5
+tool_2/trail_color = Color( 0.41, 0, 0.1, 1 )
+tool_2/clear_trail = null
+tool_2/position = Vector3( 0, 0, 0 )
+tool_2/orientation = Vector3( 0, 0, 0 )
+tool_2/delete_tool = null
+tool_2/id = 1
+
+[node name="link2" parent="robot_1/base/link1" index="1"]
+transform = Transform( 0.999817, 0.019134, 0, 8.36373e-10, -4.37034e-08, 1, 0.019134, -0.999817, -4.37114e-08, 185, -13, -333 )
+JointValue = 0.0191352
+
+[node name="link3" parent="robot_1/base/link1/link2" index="1"]
+transform = Transform( 0.993826, 0.110947, 0, -0.110947, 0.993826, 0, 0, 0, 1, 0, 534, 0 )
+JointValue = -0.111176
+
+[node name="link4" parent="robot_1/base/link1/link2/link3" index="1"]
+transform = Transform( 4.37114e-08, -1.22029e-14, 1, -8.74228e-08, -1, -8.38152e-15, 1, -8.74228e-08, -4.37114e-08, 0, 0, 13 )
+JointValue = 3.14159
+
+[node name="link5" parent="robot_1/base/link1/link2/link3/link4" index="1"]
+transform = Transform( -4.33409e-08, 5.67929e-09, 1, 0.129929, 0.991523, 9.96283e-14, -0.991523, 0.129929, -4.37114e-08, 0, 0, 594 )
+JointValue = -0.130298
+base_rotation = Vector3( -5.70828e-12, 90, 0 )
+
+[node name="link6" parent="robot_1/base/link1/link2/link3/link4/link5" index="1"]
+transform = Transform( 4.37114e-08, -1.53657e-14, -1, 8.74228e-08, -1, 1.91871e-14, -1, -8.74228e-08, -4.37114e-08, -150, 0, 0 )
+JointValue = -3.14159
+base_rotation = Vector3( -1.09934e-12, -90, 0 )
+
+[node name="grab" parent="robot_1/base/link1/link2/link3/link4/link5/link6/Flange/Attachment" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, -8.41898e-18, 0, -8.41924e-18, 1, 0, 0, 0 )
+
+[node name="RcsSignalsHolder" type="RcsSignalsHolder" parent="robot_1"]
+di_count = 16
+_0_byte/0 = false
+_0_byte/1 = false
+_0_byte/2 = false
+_0_byte/3 = false
+_0_byte/4 = false
+_0_byte/5 = false
+_0_byte/6 = false
+_0_byte/7 = false
+_1_byte/0 = false
+_1_byte/1 = false
+_1_byte/2 = false
+_1_byte/3 = false
+_1_byte/4 = false
+_1_byte/5 = false
+_1_byte/6 = false
+_1_byte/7 = false
+sensors/add_sensor = null
+do_count = 16
+__0_byte/0 = false
+__0_byte/1 = false
+__0_byte/2 = false
+__0_byte/3 = false
+__0_byte/4 = false
+__0_byte/5 = false
+__0_byte/6 = false
+__0_byte/7 = false
+__1_byte/0 = false
+__1_byte/1 = false
+__1_byte/2 = false
+__1_byte/3 = false
+__1_byte/4 = false
+__1_byte/5 = false
+__1_byte/6 = false
+__1_byte/7 = false
+executive_devices/device_count = 1
+executive_devices/add_device = null
+executive_devices/1/byte_number = 0
+executive_devices/1/bit_number = 0
+executive_devices/1/link = NodePath("../base/link1/link2/link3/link4/link5/link6/Flange/Attachment/grab")
+executive_devices/1/delete_device = null
+script = ExtResource( 9 )
+part_sensor = NodePath("../../Z-Конвейер 1/Сенсор/Area2")
+
+[node name="robot_2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.62921e-07, 1, 1.62921e-07, 0, -1.62921e-07, 1, 1, 1.62921e-07, 2.65431e-14, -2500, 1000, 3000 )
+robot_dir = "res://robots/robot_2"
+api_server_port = 8002
+safety_server_port = 10002
+drives_controller_port = 9002
+signal_bus_count = 1
+signal_buses_data/bus_1_/bus_type = 0
+signal_buses_data/bus_1_/bus_name = "dido"
+signal_buses_data/bus_1_/signal_holder_path = NodePath("RcsSignalsHolder")
+signal_buses_data/bus_1_/bus_ip = "127.0.0.1"
+signal_buses_data/bus_1_/bus_port = 10741
+signal_buses_data/bus_1_/handle_emulation = true
+signal_buses_data/bus_1_/inputs_memory_shift = 0
+signal_buses_data/bus_1_/inputs_memory_bytes = 2
+signal_buses_data/bus_1_/outputs_memory_shift = 0
+signal_buses_data/bus_1_/outputs_memory_bytes = 2
+signal_buses_data/bus_1_/delete_bus = null
+tool_2/tool_name = "grab"
+tool_2/edit_offset = false
+tool_2/trail = false
+tool_2/points_limit = 1000
+tool_2/minimum_step = 0.5
+tool_2/trail_color = Color( 0.41, 0, 0.1, 1 )
+tool_2/clear_trail = null
+tool_2/position = Vector3( 0, 0, 0 )
+tool_2/orientation = Vector3( 0, 0, 0 )
+tool_2/delete_tool = null
+tool_2/id = 1
+
+[node name="link2" parent="robot_2/base/link1" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 185, -13, -333 )
+
+[node name="link4" parent="robot_2/base/link1/link2/link3" index="1"]
+transform = Transform( -4.37114e-08, 8.38152e-15, 1, 0, 1, -8.38152e-15, -1, -3.66368e-22, -4.37114e-08, 0, 0, 13 )
+
+[node name="link5" parent="robot_2/base/link1/link2/link3/link4" index="1"]
+transform = Transform( -4.37114e-08, -9.96283e-14, 1, 0, 1, 9.96283e-14, -1, 4.35489e-21, -4.37114e-08, 0, 0, 594 )
+base_rotation = Vector3( -5.70828e-12, 90, 0 )
+
+[node name="link6" parent="robot_2/base/link1/link2/link3/link4/link5" index="1"]
+transform = Transform( -4.37114e-08, 1.91871e-14, -1, 0, 1, 1.91871e-14, 1, 8.38695e-22, -4.37114e-08, -150, 0, 0 )
+base_rotation = Vector3( -1.09934e-12, -90, 0 )
+
+[node name="RcsSignalsHolder" type="RcsSignalsHolder" parent="robot_2"]
+di_count = 16
+_0_byte/0 = false
+_0_byte/1 = false
+_0_byte/2 = false
+_0_byte/3 = false
+_0_byte/4 = false
+_0_byte/5 = false
+_0_byte/6 = false
+_0_byte/7 = false
+_1_byte/0 = false
+_1_byte/1 = false
+_1_byte/2 = false
+_1_byte/3 = false
+_1_byte/4 = false
+_1_byte/5 = false
+_1_byte/6 = false
+_1_byte/7 = false
+sensors/add_sensor = null
+do_count = 16
+__0_byte/0 = false
+__0_byte/1 = false
+__0_byte/2 = false
+__0_byte/3 = false
+__0_byte/4 = false
+__0_byte/5 = false
+__0_byte/6 = false
+__0_byte/7 = false
+__1_byte/0 = false
+__1_byte/1 = false
+__1_byte/2 = false
+__1_byte/3 = false
+__1_byte/4 = false
+__1_byte/5 = false
+__1_byte/6 = false
+__1_byte/7 = false
+executive_devices/device_count = 1
+executive_devices/add_device = null
+executive_devices/1/byte_number = 0
+executive_devices/1/bit_number = 0
+executive_devices/1/link = NodePath("../base/link1/link2/link3/link4/link5/link6/Flange/Attachment/grab")
+executive_devices/1/delete_device = null
+script = ExtResource( 9 )
+part_sensor = NodePath("../../Z-Конвейер 1/Сенсор/Area2")
+part_sensor2 = NodePath("../../Z-Конвейер 2/Сенсор/Area2")
+
+[node name="robot_3" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.62921e-07, 1, 1.62921e-07, 0, -1.62921e-07, 1, 1, 1.62921e-07, 2.65431e-14, 0, 1750, 1500 )
+robot_dir = "res://robots/robot_3"
+safety_server_port = 10003
+drives_controller_port = 9003
+signal_bus_count = 1
+signal_buses_data/bus_1_/bus_type = 0
+signal_buses_data/bus_1_/bus_name = "dido"
+signal_buses_data/bus_1_/signal_holder_path = NodePath("RcsSignalsHolder")
+signal_buses_data/bus_1_/bus_ip = "127.0.0.1"
+signal_buses_data/bus_1_/bus_port = 10742
+signal_buses_data/bus_1_/handle_emulation = true
+signal_buses_data/bus_1_/inputs_memory_shift = 0
+signal_buses_data/bus_1_/inputs_memory_bytes = 2
+signal_buses_data/bus_1_/outputs_memory_shift = 0
+signal_buses_data/bus_1_/outputs_memory_bytes = 2
+signal_buses_data/bus_1_/delete_bus = null
+current_tool = 1
+tool_2/tool_name = "grab"
+tool_2/edit_offset = false
+tool_2/trail = false
+tool_2/points_limit = 1000
+tool_2/minimum_step = 0.5
+tool_2/trail_color = Color( 0.41, 0, 0.1, 1 )
+tool_2/clear_trail = null
+tool_2/position = Vector3( 0, 0, 0 )
+tool_2/orientation = Vector3( 0, 0, 0 )
+tool_2/delete_tool = null
+tool_2/id = 1
+
+[node name="link2" parent="robot_3/base/link1" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 185, -13, -333 )
+
+[node name="link4" parent="robot_3/base/link1/link2/link3" index="1"]
+transform = Transform( -4.37114e-08, 8.38152e-15, 1, 0, 1, -8.38152e-15, -1, -3.66368e-22, -4.37114e-08, 0, 0, 13 )
+
+[node name="link5" parent="robot_3/base/link1/link2/link3/link4" index="1"]
+transform = Transform( -4.37114e-08, -9.96283e-14, 1, 0, 1, 9.96283e-14, -1, 4.35489e-21, -4.37114e-08, 0, 0, 594 )
+base_rotation = Vector3( -5.70828e-12, 90, 0 )
+
+[node name="link6" parent="robot_3/base/link1/link2/link3/link4/link5" index="1"]
+transform = Transform( -4.37114e-08, 1.91871e-14, -1, 0, 1, 1.91871e-14, 1, 8.38695e-22, -4.37114e-08, -150, 0, 0 )
+base_rotation = Vector3( -1.09934e-12, -90, 0 )
+
+[node name="RcsSignalsHolder" type="RcsSignalsHolder" parent="robot_3"]
+di_count = 16
+_0_byte/0 = false
+_0_byte/1 = false
+_0_byte/2 = false
+_0_byte/3 = false
+_0_byte/4 = false
+_0_byte/5 = false
+_0_byte/6 = false
+_0_byte/7 = false
+_1_byte/0 = false
+_1_byte/1 = false
+_1_byte/2 = false
+_1_byte/3 = false
+_1_byte/4 = false
+_1_byte/5 = false
+_1_byte/6 = false
+_1_byte/7 = false
+sensors/add_sensor = null
+do_count = 16
+__0_byte/0 = false
+__0_byte/1 = false
+__0_byte/2 = false
+__0_byte/3 = false
+__0_byte/4 = false
+__0_byte/5 = false
+__0_byte/6 = false
+__0_byte/7 = false
+__1_byte/0 = false
+__1_byte/1 = false
+__1_byte/2 = false
+__1_byte/3 = false
+__1_byte/4 = false
+__1_byte/5 = false
+__1_byte/6 = false
+__1_byte/7 = false
+executive_devices/device_count = 1
+executive_devices/add_device = null
+executive_devices/1/byte_number = 0
+executive_devices/1/bit_number = 0
+executive_devices/1/link = NodePath("../base/link1/link2/link3/link4/link5/link6/Flange/Attachment/grab")
+executive_devices/1/delete_device = null
+script = ExtResource( 9 )
+part_sensor = NodePath("../../Z-Конвейер 2/Сенсор/Area2")
+part_sensor2 = NodePath("../../Z-Конвейер 3/Сенсор/Area2")
+
+[node name="robot_4" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1, 3.25841e-07, 5.30863e-14, 0, -1.62921e-07, 1, 3.25841e-07, 1, 1.62921e-07, -1750, 2500, 0 )
+robot_dir = "res://robots/robot_4"
+api_server_port = 8004
+safety_server_port = 10004
+drives_controller_port = 9004
+signal_bus_count = 1
+signal_buses_data/bus_1_/bus_type = 0
+signal_buses_data/bus_1_/bus_name = "dido"
+signal_buses_data/bus_1_/signal_holder_path = NodePath("RcsSignalsHolder")
+signal_buses_data/bus_1_/bus_ip = "127.0.0.1"
+signal_buses_data/bus_1_/bus_port = 10743
+signal_buses_data/bus_1_/handle_emulation = true
+signal_buses_data/bus_1_/inputs_memory_shift = 0
+signal_buses_data/bus_1_/inputs_memory_bytes = 2
+signal_buses_data/bus_1_/outputs_memory_shift = 0
+signal_buses_data/bus_1_/outputs_memory_bytes = 2
+signal_buses_data/bus_1_/delete_bus = null
+tool_2/tool_name = "grab"
+tool_2/edit_offset = false
+tool_2/trail = false
+tool_2/points_limit = 1000
+tool_2/minimum_step = 0.5
+tool_2/trail_color = Color( 0.41, 0, 0.1, 1 )
+tool_2/clear_trail = null
+tool_2/position = Vector3( 0, 0, 0 )
+tool_2/orientation = Vector3( 0, 0, 0 )
+tool_2/delete_tool = null
+tool_2/id = 1
+
+[node name="link2" parent="robot_4/base/link1" index="1"]
+transform = Transform( 0.999817, 0.019134, 0, 8.36373e-10, -4.37034e-08, 1, 0.019134, -0.999817, -4.37114e-08, 185, -13, -333 )
+JointValue = 0.0191352
+
+[node name="link3" parent="robot_4/base/link1/link2" index="1"]
+transform = Transform( 0.993826, 0.110947, 0, -0.110947, 0.993826, 0, 0, 0, 1, 0, 534, 0 )
+JointValue = -0.111176
+
+[node name="link4" parent="robot_4/base/link1/link2/link3" index="1"]
+transform = Transform( 4.37114e-08, -1.22029e-14, 1, -8.74228e-08, -1, -8.38152e-15, 1, -8.74228e-08, -4.37114e-08, 0, 0, 13 )
+JointValue = 3.14159
+
+[node name="link5" parent="robot_4/base/link1/link2/link3/link4" index="1"]
+transform = Transform( -4.33409e-08, 5.67929e-09, 1, 0.129929, 0.991523, 9.96283e-14, -0.991523, 0.129929, -4.37114e-08, 0, 0, 594 )
+JointValue = -0.130298
+base_rotation = Vector3( -5.70828e-12, 90, 0 )
+
+[node name="link6" parent="robot_4/base/link1/link2/link3/link4/link5" index="1"]
+transform = Transform( 4.37114e-08, -1.53657e-14, -1, 8.74228e-08, -1, 1.91871e-14, -1, -8.74228e-08, -4.37114e-08, -150, 0, 0 )
+JointValue = -3.14159
+base_rotation = Vector3( -1.09934e-12, -90, 0 )
+
+[node name="RcsSignalsHolder" type="RcsSignalsHolder" parent="robot_4"]
+di_count = 16
+_0_byte/0 = false
+_0_byte/1 = false
+_0_byte/2 = false
+_0_byte/3 = false
+_0_byte/4 = false
+_0_byte/5 = false
+_0_byte/6 = false
+_0_byte/7 = false
+_1_byte/0 = false
+_1_byte/1 = false
+_1_byte/2 = false
+_1_byte/3 = false
+_1_byte/4 = false
+_1_byte/5 = false
+_1_byte/6 = false
+_1_byte/7 = false
+sensors/add_sensor = null
+do_count = 16
+__0_byte/0 = false
+__0_byte/1 = false
+__0_byte/2 = false
+__0_byte/3 = false
+__0_byte/4 = false
+__0_byte/5 = false
+__0_byte/6 = false
+__0_byte/7 = false
+__1_byte/0 = false
+__1_byte/1 = false
+__1_byte/2 = false
+__1_byte/3 = false
+__1_byte/4 = false
+__1_byte/5 = false
+__1_byte/6 = false
+__1_byte/7 = false
+executive_devices/device_count = 1
+executive_devices/add_device = null
+executive_devices/1/byte_number = 0
+executive_devices/1/bit_number = 0
+executive_devices/1/link = NodePath("../base/link1/link2/link3/link4/link5/link6/Flange/Attachment/grab")
+executive_devices/1/delete_device = null
+script = ExtResource( 9 )
+part_sensor = NodePath("../../Z-Конвейер 3/Сенсор/Area2")
+
+[node name="Картонка" type="RcsStickyArea" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2500, 3000, 0 )
+grab_all = null
+drop_all = null
+delete_captured_parts = null
+disable_captured_parts = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -362.696, -150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -362.696, -150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, -362.696, -150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -362.696, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -362.696, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, -362.696, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -362.696, 150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -362.696, 150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, -362.696, 150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -262.696, -150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -262.696, -150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape12" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, -262.696, -150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape13" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -262.696, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape14" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -262.696, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape15" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, -262.696, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape16" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -150, -262.696, 150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape17" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -262.696, 150 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape18" type="CollisionShape" parent="Картонка"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, -262.696, 150 )
+shape = SubResource( 3 )
+
+[node name="pallet" parent="Картонка" instance=ExtResource( 13 )]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -250, -500, -250 )
+high_of_pallet_mm = 100.0
+width_of_pallet_mm = 1000.0
+
+[node name="Генератор деталей" type="RcsGridPartGenerator" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 300, 4350 )
+mark_manipulatable = true
+part_scene_path = "res://components_lib/box/box.tscn"
+uuid = "a7f67e01-0291-4004-b55f-fe1112f62516"
+row_step = Vector3( 150, 0, 0 )
+col_step = Vector3( 0, 0, 150 )
+layer_step = Vector3( 0, 100, 0 )
+rows = 3
+cols = 3
+layers = 2
+
+[node name="box_1_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_2_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 150 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_3_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 300 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_4_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 0 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_5_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 150 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_6_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 300 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_7_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 0 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_8_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 150 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_9_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, 300 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_10_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_11_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 150 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_12_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 300 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_13_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 100, 0 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_14_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 100, 150 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_15_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 100, 300 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_16_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 100, 0 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_17_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 100, 150 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="box_18_a7f67e01-0291-4004-b55f-fe1112f62516" type="RcsPart" parent="Генератор деталей" instance=ExtResource( 7 )]
+creator_id = "a7f67e01-0291-4004-b55f-fe1112f62516"
+manipulatable = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 100, 300 )
+drop = null
+stop_fall = null
+script = ExtResource( 11 )
+height_mm = 100.0
+width_mm = 120.0
+depth_mm = 100.0
+
+[node name="Мир Вокруг" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
+
+[node name="Пол" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1540.81, -10.6843, 1951.14 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="Лампочка 1" type="SpotLight" parent="."]
+transform = Transform( 0.72849, 0.675547, -0.113751, -0.134356, 0.303712, 0.943243, 0.671752, -0.67186, 0.312015, -710.428, 3986.11, 5614.77 )
+light_energy = 5.0
+spot_range = 4096.0
+spot_attenuation = 0.189465
+spot_angle = 12.6562
+spot_angle_attenuation = 2.46229
+
+[node name="Лампочка 2" type="SpotLight" parent="."]
+transform = Transform( -0.868375, 0.422459, -0.259718, -0.134356, 0.303712, 0.943243, 0.47736, 0.853984, -0.206976, -3359, 3986.11, 1930.41 )
+light_energy = 5.0
+spot_range = 4096.0
+spot_attenuation = 0.189465
+spot_angle = 12.6562
+spot_angle_attenuation = 2.46229
+
+[node name="Лампочка 3" type="SpotLight" parent="."]
+transform = Transform( -0.868375, 0.422459, -0.259718, -0.134356, 0.303712, 0.943243, 0.47736, 0.853984, -0.206976, -807.902, 5242.52, 1085.75 )
+light_energy = 5.0
+spot_range = 4096.0
+spot_attenuation = 0.189465
+spot_angle = 12.6562
+spot_angle_attenuation = 2.46229
+
+[node name="Лампочка 4" type="SpotLight" parent="."]
+transform = Transform( 0.989879, 0.0850228, 0.113622, -0.138635, 0.408297, 0.902261, 0.030321, -0.908881, 0.415952, -1804.02, 5613.88, 1522.09 )
+light_energy = 5.0
+spot_range = 4096.0
+spot_attenuation = 0.189465
+spot_angle = 12.6562
+spot_angle_attenuation = 2.46229
+
+[editable path="Z-Конвейер 1/Сенсор"]
+
+[editable path="Z-Конвейер 2/Сенсор"]
+
+[editable path="Z-Конвейер 3"]
+
+[editable path="Z-Конвейер 3/Сенсор"]
+
+[editable path="robot_1"]
+
+[editable path="robot_2"]
+
+[editable path="robot_3"]
+
+[editable path="robot_4"]

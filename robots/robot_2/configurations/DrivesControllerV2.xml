@@ -6,7 +6,7 @@
 		<ServoPort>9002</ServoPort>
 	</Base>
 	<ReplyTimeouts>
-		<Default>500</Default>
+		<Default>1000</Default>
 		<SetReady>4000</SetReady>
 		<GetState>100</GetState>
 	</ReplyTimeouts>

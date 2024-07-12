@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component_meta>
+<name>box</name>
+<developer>eidos</developer>
+<version>1</version>
+<description>Box. The height, width and depth of the box are adjustable. Covers can be opened by change of properties. </description>
+</component_meta>

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://components_lib/a12_1450/meshes/j2.mesh" type="ArrayMesh" id=1]
 [ext_resource path="res://components_lib/a12_1450/meshes/j3.mesh" type="ArrayMesh" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://components_lib/a12_1450/meshes/flange.tres" type="CylinderMesh" id=9]
 [ext_resource path="res://components_lib/a12_1450/materials/mat_0.material" type="Material" id=10]
 [ext_resource path="res://components_lib/grab/grab.tscn" type="PackedScene" id=11]
+[ext_resource path="res://misc/hohloma.tres" type="Material" id=12]
 
 [node name="a12_1450" type="RobotEmulation"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 13.3023, 0 )
@@ -163,7 +164,7 @@ isInverse = true
 transform = Transform( 1000, 0, 0, 0, -4.37114e-05, 1000, 0, -1000, -4.37114e-05, 185, -13, -333 )
 redirect_selection = true
 mesh = ExtResource( 3 )
-material/0 = null
+material/0 = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -191,7 +192,7 @@ base_translation = Vector3( 0, 534, 0 )
 transform = Transform( 1000, 0, 0, 0, 1000, -4.37114e-05, 0, 4.37114e-05, 1000, 156, 1, 13 )
 redirect_selection = true
 mesh = ExtResource( 2 )
-material/0 = null
+material/0 = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -242,6 +243,16 @@ __meta__ = {
 [node name="Flange" type="AttachmentBase" parent="base/link1/link2/link3/link4/link5/link6"]
 redirect_selection = true
 
+[node name="Attachment" type="Attachment" parent="base/link1/link2/link3/link4/link5/link6/Flange"]
+transform = Transform( 1, 1.82782e-07, -4.37114e-08, -1.82782e-07, 1, -1.62921e-07, 4.37114e-08, 1.62921e-07, 1, 0.000274821, -1, 5 )
+redirect_selection = true
+base_path = NodePath("a12_1450/base/link1/link2/link3/link4/link5/link6/Flange")
+attachment_state = 0
+
+[node name="grab" parent="base/link1/link2/link3/link4/link5/link6/Flange/Attachment" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 8.47035e-22, 0, 6.49364e-22, 1, 0, 0, 0 )
+redirect_selection = true
+
 [node name="Joint3" type="AttachmentBase" parent="base/link1/link2/link3"]
 redirect_selection = true
 
@@ -259,18 +270,3 @@ redirect_selection = true
 
 [node name="Joint1" type="AttachmentBase" parent="base/link1"]
 redirect_selection = true
-
-[node name="Attachment" type="Attachment" parent="."]
-transform = Transform( 2.65431e-14, 1.62921e-07, 1, 1, -1.62921e-07, 0, 1.62921e-07, 1, -1.62921e-07, 934, 0, 866 )
-base_path = NodePath("a12_1450/base/link1/link2/link3/link4/link5/link6/Flange")
-attachment_state = 0
-
-[node name="grab" parent="Attachment" instance=ExtResource( 11 )]
-lifted_of_arms_mm = 100.0
-width_tip_of_arms_mm = 10.0
-width_of_arms_mm = 54.0
-lenght_of_arms_mm = 64.0
-radius_of_flange_mm = 42.0
-hight_of_flange_mm = 23.0
-do_grab = false
-grab_state = false
